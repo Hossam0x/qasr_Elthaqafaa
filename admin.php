@@ -1,23 +1,19 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding-items</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="styleshhet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/profile.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Sevillana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Qasr Elthaqafa</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
-
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-color" aria-label="Offcanvas navbar large">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-color" aria-label="Offcanvas navbar large">
         <div class="container ">
             <h2><a class="navbar-brand" href="index.php"> Qasr AlTHaqafa</a></h2>
             <?php if(isset($_SESSION['auth'])):?>
@@ -52,13 +48,37 @@
             </div>
         </div>
     </nav>
-<header>
-    <div
-      class="caption_header container d-flex align-items-center justify-content-center text-white flex-column text-center ">
-      <div>
-        <button class="btn btng text-white"> <a class="text-decoration-none" href="events.html">Click to see our events</a></button>
-      </div>
-    </div>
-  </header>
+    <section class="add-item">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="form_side">
+                        <h3 class="position-relative pb-2 mb-4 text-center mt-5 mb-3">Adding New WorkShop</h3>
+                        <form action="handelers/handelRegister.php" method="POST" >
+                <div class="row">
+                  <div class="col-md-12 mb-3 d-flex align-items-center gap-5 justify-content-between">
+
+                    <input placeholder="Work Shop Name" type="Work Shop Name" name="name" class="w-100 p-2 rounded-5"  required>
+                  </div>
+                  <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
+                    <input placeholder="WorkShopDate" type="text" name="WorkShopDay" class="w-100 p-2 rounded-5" required>
+                  </div>
+                  <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
+                    <input placeholder="Ticket Price" type="Text" name="TicketPrice" class="w-100 p-2 rounded-5" required>
+                  </div>
+                  <div class="col-md-12 mb-3 d-flex align-items-center gap-3  justify-content-center">
+                  <label for="input-file" class="label1 d-block text-white rounded-5 p-2 mt-2 " >Upload photo</label>
+                            <input type="file" accept="image/jpg, image/png, image/jpeg" id="input-file" class="input1 ">
+                  </div>
+                  <div class="col-md-12 text-cnter d-flex justify-content-center">
+                    <button class="btn rounded-5  text-white px-3 bg-color" type="submit">Add a new workshop</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section> 
+<script src="js/bootstrap.bundle.min.js"></script>    
 </body>
 </html>

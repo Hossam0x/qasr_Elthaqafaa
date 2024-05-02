@@ -8,7 +8,6 @@
 <body>
 
 <h2>Select Day of the Week and Time:</h2>
-<?php echo 123; ?>
 
 <form action="process.php" method="post">
   <!-- Dropdown list for selecting day of the week -->

@@ -1,0 +1,9 @@
+.form_side h3{
+    font-family: "Sevillana", cursive;
+} 
+.bg-color{
+    background-color: rgb(198, 162, 118);
+}
+.bg-color:hover{
+    background-color: rgba(198, 162, 118, 0.5);
+}

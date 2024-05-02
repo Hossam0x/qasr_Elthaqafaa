@@ -112,9 +112,9 @@
             </div>
             <div class="col-md-6 d-flex align-items-center ">
               <div class="row">
-                <div class="container shadow-lg bg-white rounded-5 position-relative d-flex align-items-center mb-5">
+                <div class="container shadow-lg bg-white rounded-5  d-flex align-items-center mb-5">
                   <div class="col-md-6 visa">
-                    <img src="images/visa.jpg" class="rounded-5 w-100 img-fluid shadow-lg ">
+                    <img src="images/visa.jpg" class="rounded-5 w-100 img-fluid shadow-lg position-relative">
                   </div>
                   <div class="col-md-6 ">
                   <p class="lead ">TotalPrice: <span class="text-success">totalprice</span></p>
