@@ -1,4 +1,11 @@
-<?php session_start();   ?>
+<?php
+session_start();
+
+if (!isset($_SESSION['auth'])) {
+    header("Location: login.php");
+    exit; 
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +46,7 @@
                 <div class="col-md-6 ">
                     <div class="form_side">
                         <!-- <h5 class="position-relative pb-2 mb-4 text-center">SignUp</h5> -->
-                        <form action="handelers/handelRegister.php" method="POST" >
+                        <form action="handelers/handelsign.php" method="POST" >
                 <div class="row">
                   <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
                     <label for="name" class="me-auto">FirstName</label>

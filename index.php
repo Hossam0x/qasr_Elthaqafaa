@@ -56,7 +56,7 @@
     <div
       class="caption_header container d-flex align-items-center justify-content-center text-white flex-column text-center ">
       <div>
-        <button class="btn btng text-white"> <a class="text-decoration-none" href="events.html">Click to see our events</a></button>
+        <button class="btn btng text-white"> <a class="text-decoration-none" href="events.php">Click to see our events</a></button>
       </div>
     </div>
   </header>
