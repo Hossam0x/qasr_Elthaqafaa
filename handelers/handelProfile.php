@@ -39,5 +39,21 @@ if (isset($_POST['save'])) {
     }
 }
 
+if (isset($_POST['delete'])) {
+    $delete_query = "DELETE FROM user WHERE email = ?";
+    $delete_stmt = mysqli_stmt_init($con);
+    if (mysqli_stmt_prepare($delete_stmt, $delete_query)) {
+        mysqli_stmt_bind_param($delete_stmt, "s", $email);
+        if (mysqli_stmt_execute($delete_stmt)) {
+            header("Location: signup.php");
+            exit;
+        } else {
+            echo "Error deleting user account: " . mysqli_error($con);
+        }
+    } else {
+        echo "Error preparing delete statement: " . mysqli_error($con);
+    }
+}
+
 // Close database connection
 mysqli_close($con);
