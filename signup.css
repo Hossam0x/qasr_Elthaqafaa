@@ -1,0 +1,164 @@
+body{
+    background-color: rgb(247, 239, 228);
+    }
+    
+    
+.sign-frame{
+    border: 7px solid rgb(87, 54, 9);
+    padding: 20px;
+    width: 700px; 
+    height: 750px ;
+    text-align: center;
+    margin: 10px; 
+    float: left; 
+    border-radius: 90px;
+    position: relative;
+    top: 70px;
+    left: 30%;
+}
+
+
+
+.sign-frame .sign-username{
+    color:  rgb(122, 70, 15);
+    font-size: 40px;
+    position: relative;
+    top: 90px;
+    right: -10px ;
+}
+
+.sign-frame .sign-inuser{
+    position: relative;
+    top: 90px;
+    left:123px;
+    border-radius: 10px;
+    width: 300px;
+    height: 45px;
+    border: 1px solid rgb(122, 70, 15);
+    font-size: 20px;
+}
+
+.sign-frame .firstname{
+    color:  rgb(122, 70, 15) ;
+    font-size: 40px;
+    position: relative;
+    top: 210px;
+    left: -400px ;
+}
+
+.sign-frame .infname{
+    position: relative;
+    top: 150px;
+    left: 24%;
+    border-radius: 10px;
+    width: 300px;
+    height: 45px;
+    border: 1px solid rgb(122, 70, 15);
+    font-size: 20px;
+}
+
+.sign-frame .lastname{
+    color:  rgb(122, 70, 15) ;
+    font-size: 40px;
+    position: relative;
+    top: 260px;
+    right: 350px;
+}
+
+.sign-frame .inlname{
+    position: relative;
+    top: 200px;
+    left: 31%;
+    border-radius: 10px;
+    width: 300px;
+    height: 45px;
+    border: 1px solid rgb(122, 70, 15);
+    font-size: 20px;
+}
+
+
+.sign-frame .select{
+    color:  rgb(122, 70, 15) ;
+    font-size: 40px;
+    position: relative;
+    top: 310px;
+    right: 44%;
+    
+}
+
+.sign-frame .firstSelect{
+    position: relative;
+    top: 304px;
+    left: -27.5%;
+    border-radius: 10px;
+    width: 171px;
+    height: 45px;
+    border: 1px solid rgb(122, 70, 15);
+    font-size: 20px;
+    
+    
+}
+.sign-frame .secondSelect{
+    position: relative;
+    top: 249px;
+    left: 60.5%;
+    border-radius: 10px;
+    width: 233px;
+    height: 45px;
+    border: 1px solid rgb(122, 70, 15);
+    font-size: 20px;
+    
+    
+}
+
+
+.sign-frame .phone{
+    color:  rgb(122, 70, 15) ;
+    font-size: 40px;
+    position: relative;
+    top: 350px;
+    right: 28%;
+}
+
+.sign-frame .inphone{
+    position: relative;
+    top: 342px;
+    left: -13%;
+    border-radius: 10px;
+    width: 300px;
+    height: 45px;
+    border: 1px solid rgb(122, 70, 15);
+    font-size: 20px;
+}
+
+.sign-frame .sign-btn{
+    background-color: rgb(87, 54, 9);
+    border-color:rgb(87, 54, 9) ;
+    border-radius: 30px 30px;
+    width: 2000px;
+    height: 80px;
+    position: relative;
+    top: 422px;
+    left: 2%;
+    width: 400px;
+    color: white;
+    font-size: 25px;
+}
+
+
+
+
+
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}

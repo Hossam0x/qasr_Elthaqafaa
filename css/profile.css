@@ -1,0 +1,97 @@
+header {
+    background-image: url(../over_lay.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    background-attachment: fixed;
+}
+
+
+
+.counter_icon i {
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0 0 10px white;
+    border-radius: 50%;
+}
+
+button {
+    transition-duration: 0.9s;
+}
+
+.btn1:hover {
+    box-shadow: 0 0 0 5px rgba(222, 184, 135, 0.5);
+}
+.btn2:hover {
+    box-shadow: 0 0 0 5px rgba(128, 128, 128, 0.162);
+}
+
+input:focus {
+    border: 1px solid rgb(222, 184, 135);
+    box-shadow: 0 0 0 5px rgb(222, 184, 135);
+    outline: 0;
+}
+
+input {
+    border: 1px solid burlywood;
+}
+
+ h5::before {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 3px;
+    left: 0;
+    top: 100%;
+    background-color: burlywood;
+}
+.change-pass{
+    right: 10%;
+    
+}
+.change-mail{
+    right: 10%;
+}
+.btn1 {
+    background-color: burlywood !important;
+}
+.btn2{
+    background-color: rgba(128, 128, 128, 0.518) !important;
+}
+.btn3{
+    background-color: rgba(128, 128, 128, 0.518) !important;
+}
+
+a {
+    color: black;
+}
+.link :hover{
+color: burlywood;
+}
+.card img{
+    width: 100px;
+    height: 100px;
+}
+.label1{
+    background-color: rgb(216, 180, 134);
+    cursor: pointer;
+}
+.input1{
+    display: none;
+}
+.bg-color{
+    background-color: rgb(155, 132, 101);
+}
+.text-bg-color{
+    background-color:rgb(155, 132, 101) ;
+}
+i{
+    transition-duration: 0.5s;
+}
+.btn3:hover i{
+transform: translateX(-0.5rem);
+}
+.btn3:hover {
+    box-shadow: 0 0 0 5px rgba(128, 128, 128, 0.162);
+}

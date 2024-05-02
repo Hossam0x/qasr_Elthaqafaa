@@ -1,0 +1,157 @@
+body{
+    background-color: rgb(247, 239, 228);
+    }
+    
+/* .ss-frame .sign{
+    color:  rgb(122, 70, 15);
+    font-size: 65px;
+    position: relative;
+    top: 35px;
+    left: 25% ;
+}
+
+.ss-frame .ss-username{
+    color:  rgb(122, 70, 15);
+    font-size: 40px;
+    position: relative;
+    top:140px;
+    
+}
+.ss-frame .ss-inuser{
+    position: relative;
+    top: 140px;
+    left: 21%;
+    border-radius: 10px;
+    width: 300px;
+    height: 45px;
+    border: 1px solid rgb(122, 70, 15);
+    font-size: 20px;
+}
+.ss-frame .ss-name{
+    color:  rgb(122, 70, 15);
+    font-size: 40px;
+    position: relative;
+    top:100px;
+    right: 30%;
+    
+}
+.ss-frame .ss-inname{
+    position: relative;
+    top: 90px;
+    left: -1%;
+    border-radius: 10px;
+    width: 300px;
+    height: 45px;
+    border: 1px solid rgb(122, 70, 15);
+    font-size: 20px;
+}
+
+.ss-frame .email{
+    color:  rgb(122, 70, 15);
+    font-size: 40px;
+    position: relative;
+    top: 220px;
+    right: 68% ;
+}
+
+.ss-frame .inemail{
+    position: relative;
+    top: 170px;
+    left: 37%;
+    border-radius: 10px;
+    width: 300px;
+    height: 45px;
+    border: 1px solid rgb(122, 70, 15);
+    font-size: 20px;
+}
+
+.ss-frame .ss-password{
+    color:  rgb(122, 70, 15) ;
+    font-size: 40px;
+    position: relative;
+    top: 250px;
+    right: 52%;
+    
+}
+
+.ss-frame .ss-inpass{
+    position: relative;
+    top: 200px;
+    left: 47.5%;
+    border-radius: 10px;
+    width: 300px;
+    height: 45px;
+    border: 1px solid rgb(122, 70, 15);
+    font-size: 20px;
+    
+    
+} */
+
+
+/* .ss-frame .confirm-password{
+color:  rgb(122, 70, 15) ;
+font-size: 40px;
+position: relative;
+top: 300px;
+right: 43%;
+}
+.ss-frame .in-conf-pass{
+position: relative;
+top: 250px;
+left: 26%;
+border-radius: 10px;
+width: 300px;
+height: 45px;
+border: 1px solid rgb(122, 70, 15);
+font-size: 20px;
+}
+
+.ss-frame .ss-btn{
+background-color: rgb(87, 54, 9);
+border-color:rgb(87, 54, 9) ;
+border-radius: 30px 30px;
+width: 2000px;
+height: 80px;
+position: relative;
+top: 350px;
+left: 2%;
+width: 400px;
+color: white;
+font-size: 25px;
+} */
+
+.btn{
+    transition-duration: 0.5s;
+}
+.btn:hover{
+    background-color: rgba(170, 148, 106, 0.483) !important;
+    box-shadow: 0 0 0 5px rgba(170, 148, 106, 0.258);
+}
+input:focus {
+    border: 1px solid #cba76c;
+    box-shadow: 0 0 0 5px #cba76c54;
+    outline: 0;
+}
+select:focus {
+    border: 1px solid #cba76c;
+    box-shadow: 0 0 0 5px #cba76c54;
+    outline: 0;
+}
+
+input,select{
+    border: 1px solid #cba76c;
+}
+.btn{
+    background-color:#776445 ;
+}
+.container{
+    box-shadow:  0 0 10px 10px #e5b973;
+}
+.col{
+    color: #776445;
+}
+
+.visa img{
+    position: absolute;
+    right: 30%;
+}

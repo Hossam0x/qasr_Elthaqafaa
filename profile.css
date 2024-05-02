@@ -1,0 +1,149 @@
+*{
+    font-family: 'Popins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* text-align: right; */
+    
+}
+
+header{
+    background-color: rgb(87, 54, 9);
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 105px;
+    position: relative;
+    top: 0px;
+}
+
+.logo{
+    text-decoration: none;
+    color:rgb(247, 239, 228);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2.5em;
+    position: relative;
+    left: 30%;
+}
+
+.logout{
+    text-decoration: none;
+    color:rgb(247, 239, 228);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5em;
+    position: relative;
+    right:-4%;
+
+}
+.navigation a{
+    color:rgb(247, 239, 228);
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: 500;
+    padding-left: 10px;
+}
+.navigation a:hover{
+    color: rgb(122, 114, 114);
+}
+
+body {
+    background-image: url(images/over_lay.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem 0;
+    position: relative;
+    background-attachment: fixed;
+}
+.contact{
+position: relative;
+top: -40px;
+}
+.contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: bisque;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.counter_icon i {
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0 0 10px white;
+    border-radius: 50%;
+}
+
+button {
+    transition-duration: 0.9s;
+}
+
+.btn1:hover {
+    box-shadow: 0 0 0 5px rgba(222, 184, 135, 0.5);
+}
+.btn2:hover {
+    box-shadow: 0 0 0 5px rgba(128, 128, 128, 0.162);
+}
+
+input:focus {
+    border: 1px solid rgb(222, 184, 135);
+    box-shadow: 0 0 0 5px rgb(222, 184, 135);
+    outline: 0;
+}
+
+input {
+    border: 1px solid burlywood;
+}
+
+.contact h5::before {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 3px;
+    left: 0;
+    top: 100%;
+    background-color: burlywood;
+}
+.change-pass{
+    right: 5%;
+    
+}
+.change-mail{
+    right: 5%;
+}
+.btn1 {
+    background-color: burlywood !important;
+}
+.btn2{
+    background-color: rgba(128, 128, 128, 0.518) !important;
+}
+
+a {
+    color: black;
+}
+.link :hover{
+color: rgb(109, 86, 56);
+}
+.card img{
+    width: 100px;
+    height: 100px;
+}
+.label1{
+    background-color: rgb(216, 180, 134);
+    cursor: pointer;
+}
+.input1{
+    display: none;
+}
+
+
