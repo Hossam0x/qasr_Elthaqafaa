@@ -26,11 +26,11 @@ include "handelers/handelProfile.php";
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-color" aria-label="Offcanvas navbar large">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-color" aria-label="Offcanvas navbar large" dir="rtl">
         <div class="container ">
-            <h2><a class="navbar-brand" href="index.php"> Qasr AlTHaqafa</a></h2>
+            <h2><a class="navbar-brand" href="index.php">قصر الثقافه</a></h2>
             <?php if(isset($_SESSION['auth'])):?>
-                <a class="navbar-item text-decoration-none me-2 text-white" href="logout.php">Log Out </a>
+                <a class="navbar-item text-decoration-none me-2 text-white" href="logout.php">تسجيل الخروج</a>
                 <?php endif; ?>  
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
                 aria-controls="offcanvasNavbar2">
@@ -44,15 +44,14 @@ include "handelers/handelProfile.php";
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" >
-                        <li class="nav-item"><a class="nav-link active aria-current= page" href="#courses">WorkShops</a></li>
-                        <li class="nav-item"><a class="nav-link "href="#bazar">Bazar</a></li>
-                        <li class="nav-item"><a class="nav-link "href="#concerts">Concerts</a></li>
-                        <li class="nav-item"><a class="nav-link "href="#plays">Plays</a></li>
-                        <li class="nav-item"><a class="nav-link "href="#about-us"> Who we are?</a></li>
-                        <li class="nav-item"><a class="nav-link "href="admin.php">adding-items</a></li>
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item"><a class="nav-link active aria-current= page" href="#courses">ورش</a></li>
+                        <li class="nav-item"><a class="nav-link "href="#bazar">معارض</a></li>
+                        <li class="nav-item"><a class="nav-link "href="#concerts">معارض</a></li>
+                        <li class="nav-item"><a class="nav-link "href="#plays">مسرحيات</a></li>
+                        <li class="nav-item"><a class="nav-link "href="#about-us">من نحن؟</a></li>
                         <?php if(!isset($_SESSION['auth'])):?>
-                        <li class="nav-item"><a class="nav-link "href="login.php">login</a></li>
+                        <li class="nav-item"><a class="nav-link "href="login.php">تسجيل</a></li>
                         <?php else: ?>
                             <a href="profile.php" class="text-decoration-none p-2 text-white"><?php echo $_SESSION['auth'][0]?></a>
                         <?php endif; ?>
@@ -107,7 +106,10 @@ include "handelers/handelProfile.php";
                                         <input placeholder="Your phone number" type="tel" maxlength="11" class="w-100 p-2 rounded-5 mt-4">
                                     </div>
                                     <div class="col-md-12 link">
-                                        <a href="#">Delete Your account</a>
+                                        <!-- Form for deleting the account -->
+                                        <form method="POST" onsubmit="return confirm('Are you sure you want to delete your account?');">
+                                            <button type="submit" class="btn btn-danger" name="delete">Delete Your Account</button>
+                                        </form>
                                         <p class="lead text-danger fs-6">Note that if you delete your account you will lose your data</p>
                                     </div>
                                     <div class="col-md-12 text-center p-3 ">
