@@ -3,7 +3,8 @@ session_start();
 include '../database.php';
 
 if (isset($_POST["add"])) {
-    $type = mysqli_real_escape_string($con, $_POST["name"]);
+    $name =mysqli_real_escape_string($con, $_POST["name"]);
+    $type = mysqli_real_escape_string($con, $_POST["select"]);
     $date = mysqli_real_escape_string($con, $_POST["WorkShopDay"]);
     $price = mysqli_real_escape_string($con, $_POST["TicketPrice"]);
 
@@ -17,7 +18,7 @@ if (isset($_POST["add"])) {
         $imagePath = ""; // Set image path to empty if no new image is uploaded
     }
 
-    $sqlInsert = "INSERT INTO storedata (type, date, price, image) VALUES ('$type', '$date', '$price', '$imagePath')";
+    $sqlInsert = "INSERT INTO storedata (name,type, date, price, image) VALUES ('$name','$type', '$date', '$price', '$imagePath')";
     mysqli_query($con, $sqlInsert);
     $_SESSION['add'] = "Workshop added successfully.";
     header('Location: ../admin.php');

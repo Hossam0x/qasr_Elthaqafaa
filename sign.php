@@ -44,7 +44,7 @@ if (!isset($_SESSION['auth'])) {
         }
         ?>
          <div class="form_side">
-            <form action="handelers/handelsign.php" method="post">
+            <form action="handelers/handelsign.php<?php if(isset($_GET['id'])) { echo '?id=' . $_GET['id']; } ?>" method="post">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="col-md-12 mb-3 d-flex align-items-center gap-3 me-2">
@@ -72,7 +72,19 @@ if (!isset($_SESSION['auth'])) {
                             <img src="images/visa.jpg" class="rounded-5 w-100 img-fluid shadow-lg position-relative">
                         </div>
                         <div class="col-md-6 ">
-                            <p class="lead ">TotalPrice: <span class="text-success">totalprice</span></p>
+                            <?php 
+                            include 'database.php';
+                            $id=$_GET['id'];
+                            $sqll="SELECT * from storedata where id='$id'";
+                            $result = mysqli_query($con, $sqll);
+                            if (mysqli_num_rows($result) > 0) {
+                                $row = mysqli_fetch_assoc($result);
+                                $price=$row['price'];
+
+                            }
+                            
+                            ?>
+                            <p class="lead ">TotalPrice: <span class="text-success"><?php echo $price ?></span></p>
                             <label for="visa-num">
                                 <p class="lead ">CardNum: </p>
                             </label>

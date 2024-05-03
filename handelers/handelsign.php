@@ -1,6 +1,7 @@
 <?php
 session_start();
-include 'Reservationsdata.php';
+//include 'Reservationsdata.php';
+include '../database.php';
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -10,13 +11,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastname = $_POST['lname'];
     $phone = $_POST['phone'];
     $card=$_POST['cardnum'];
+    $type='test';
+    $date='test';
+    $price='test';
 }
+    $id=$_GET['id'];
+    $sqll="SELECT * from storedata where id='$id'";
+    $result = mysqli_query($con, $sqll);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $type=$row['type'];
+        $date=$row['date'];
+        $price=$row['price'];
+    }
 
-$sql = "INSERT INTO reservations (user_email,type, date,phone,first_name,last_name) VALUES (?,?, ?,?,?,?)";
+
+$sql = "INSERT INTO reservations (user_email,type, date,phone,first_name,last_name,price) VALUES (?,?, ?,?,?,?,?)";
     
 // Prepare and bind parameters
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("ssssss",$email, $firstselect, $secondselect,$phone,$firstname,$lastname);
+$stmt = $con->prepare($sql);
+$stmt->bind_param("sssssss",$email, $type, $date,$phone,$firstname,$lastname,$price);
 
 // Execute the statement
 if ($stmt->execute()) {
@@ -25,13 +39,13 @@ if ($stmt->execute()) {
     header("Location: ../sign.php");
     exit();
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $sql . "<br>" . $con->error;
 }
 
 // Close statement
 $stmt->close();
 
-// Close connection
-$conn->close();
+// Close conection
+$con->close();
 ?>
 

@@ -26,11 +26,7 @@ include "handelers/handelProfile.php";
 </head>
 
 <body>
-<<<<<<< Updated upstream
-<nav class="navbar navbar-expand-lg navbar-dark bg-color" aria-label="Offcanvas navbar large">
-=======
 <nav class="navbar navbar-expand-lg navbar-dark bg-color fixed-top" aria-label="Offcanvas navbar large">
->>>>>>> Stashed changes
         <div class="container ">
             <h2><a class="navbar-brand" href="index.php"> Qasr AlTHaqafa</a></h2>
             <?php if(isset($_SESSION['auth'])):?>

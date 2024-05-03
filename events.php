@@ -72,7 +72,7 @@
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="info_text">
-                    <p class="card-text lead fs-6"><span class="text-primary"><?php echo $data['type'] ?></span> / <?php echo $data['date'] ?></p>
+                    <p class="card-text lead fs-6"><span class="text-primary"><?php echo $data['name'] ?></span> / <?php echo $data['date'] ?></p>
                     <p class="card-text">Ticket price <span class="text-success"><?php echo $data['price'] ?></span></p>
                   </div>
                   <div class="icon">
@@ -93,7 +93,7 @@
           <div class="row me-0 ms-0  g-4">
           <?php
             include('database.php');
-            $sqlSelect = "SELECT * FROM storedata where type='Partie'";
+            $sqlSelect = "SELECT * FROM storedata where type='Party'";
             $result = mysqli_query($con,$sqlSelect);
             while($data = mysqli_fetch_array($result)){
                 ?>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="info_text">
-                    <p class="card-text lead fs-6"><span class="text-primary"><?php echo $data['type'] ?></span> / <?php echo $data['date'] ?></p>
+                    <p class="card-text lead fs-6"><span class="text-primary"><?php echo $data['name'] ?></span> / <?php echo $data['date'] ?></p>
                     <p class="card-text">Ticket price <span class="text-success"><?php echo $data['price'] ?></span></p>
                   </div>
                   <div class="icon">
@@ -126,7 +126,7 @@
           <div class="row me-0 ms-0  g-4">
           <?php
             include('database.php');
-            $sqlSelect = "SELECT * FROM storedata where type='books'";
+            $sqlSelect = "SELECT * FROM storedata where type='book gallery'";
             $result = mysqli_query($con,$sqlSelect);
             while($data = mysqli_fetch_array($result)){
                 ?>
@@ -137,11 +137,11 @@
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="info_text">
-                    <p class="card-text lead fs-6"><span class="text-primary">book gallery</span> / Thursday 22/6</p>
-                    <p class="card-text">Ticket price <span class="text-success">$100</span></p>
+                    <p class="card-text lead fs-6"><span class="text-primary"><?php echo $data['name'] ?></span> / <?php echo $data['date'] ?></p>
+                    <p class="card-text">Ticket price <span class="text-success"><?php echo $data['price'] ?></span></p>
                   </div>
                   <div class="icon">
-                    <button class="btn btn-ico bg-danger"><a href="sign.php" class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
+                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
                   </div>
                 </div>
               </div>
@@ -156,6 +156,12 @@
             <h3 class="position-relative px-5">plays</h3>
           </div>
           <div class="row me-0 ms-0  g-4 ">
+          <?php
+            include('database.php');
+            $sqlSelect = "SELECT * FROM storedata where type='plays'";
+            $result = mysqli_query($con,$sqlSelect);
+            while($data = mysqli_fetch_array($result)){
+                ?>
             <div class="col-md-6">
               <div class="card border-0 rounded-5 shadow-lg hovering">
                 <div class="img overflow-hidden">
@@ -163,15 +169,16 @@
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="info_text">
-                    <p class="card-text lead fs-6"><span class="text-primary">Drawing</span> / Wednesday At 5 pm</p>
-                    <p class="card-text">Ticket price <span class="text-success">$100</span></p>
+                    <p class="card-text lead fs-6"><span class="text-primary"><?php echo $data['name'] ?></span> / <?php echo $data['date'] ?></p>
+                    <p class="card-text">Ticket price <span class="text-success"><?php echo $data['price'] ?></span></p>
                   </div>
                   <div class="icon">
-                    <button class="btn btn-ico bg-danger"><a href="sign.php" class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
+                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
                   </div>
                 </div>
               </div>
             </div>
+            <?php } ?>
           </div>
         </div>
       </section> 

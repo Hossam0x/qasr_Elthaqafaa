@@ -51,6 +51,13 @@
     <section class="add-item">
         <div class="container">
             <div class="row">
+            <?php if(isset($_SESSION['add'])): ?>
+    <div class="alert alert-success text-center">
+        <?php echo $_SESSION['add']; ?>
+    </div>
+    <?php unset($_SESSION['add']); ?>
+<?php endif; ?>
+
                 <div class="col-md-12">
                     <div class="form_side">
                         <h3 class="position-relative pb-2 mb-4 text-center mt-5 mb-3">Adding New WorkShop</h3>
@@ -66,14 +73,14 @@
                                     <input placeholder="Ticket Price" type="Text" name="TicketPrice" class="w-100 p-2 rounded-5" required>
                                 </div>
                                 <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
-                                <select class="form-select rounded-5 p-2 border-secondary " aria-label="Default select example">
-  <option selected>Select the type </option>
-  <option value="1">Work shop</option>
-  <option value="2">Party</option>
-  <option value="3">book gallery</option>
-  <option value="3">plays</option>
-</select>
-                                </div>
+                                <select class="form-select rounded-5 p-2 border-secondary " name="select" aria-label="Default select example">
+        <option selected>Select the type </option>
+        <option value="Workshop">Work shop</option>
+        <option value="Party">Party</option>
+        <option value="book gallery">book gallery</option>
+        <option value="plays">plays</option>
+        </select>
+                                        </div>
                                 <div class="col-md-12 mb-3 d-flex align-items-center gap-3  justify-content-center">
                                     <label for="input-file" class="label1 d-block text-white rounded-5 p-2 mt-2">Upload photo</label>
                                     <input type="file" name="image" accept="image/jpg, image/png, image/jpeg" id="input-file" class="input1">
