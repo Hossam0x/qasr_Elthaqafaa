@@ -1,0 +1,94 @@
+body{
+    background-color: rgb(247, 239, 228);
+    }
+    /* .login{
+        padding: 10px;
+    } */
+
+.login-frame{
+    border: 7px solid rgb(87, 54, 9);
+    padding: 20px;
+    width: 700px; 
+    height: 750px ;
+    text-align: center;
+    margin: 10px; 
+    float: left; 
+    border-radius: 90px;
+    position: relative;
+    top: 70px;
+    left: 30%;
+}
+.login-frame .log{
+    color:  rgb(122, 70, 15);
+    font-size: 65px;
+    position: relative;
+    top: 30px;
+    left: 18% ;
+}
+.login-frame .username{
+    color:  rgb(122, 70, 15);
+    font-size: 40px;
+    position: relative;
+    top: 175px;
+    right: 40% ;
+}
+.login-frame .inuser{
+    position: relative;
+    top: 120px;
+    left: 32%;
+    border-radius: 10px;
+    width: 300px;
+    height: 45px;
+    border: 1px solid rgb(122, 70, 15);
+    font-size: 20px;
+}
+
+.login-frame .password{
+    color:  rgb(122, 70, 15) ;
+    font-size: 40px;
+    position: relative;
+    top: 260px;
+    right: 55%;
+    
+}
+
+.login-frame .inpass{
+    position: relative;
+    top: 210px;
+    left: 21%;
+    border-radius: 10px;
+    width: 300px;
+    height: 45px;
+    border: 1px solid rgb(122, 70, 15);
+    font-size: 20px;
+    
+    
+}
+
+.login-frame .log-btn{
+    background-color: rgb(87, 54, 9);
+    border-color:rgb(87, 54, 9) ;
+    border-radius: 30px 30px;
+    width: 2000px;
+    height: 80px;
+    position: relative;
+    top: 300px;
+    left: -1%;
+    width: 400px;
+    color: white;
+    font-size: 25px;
+}
+.new{
+    position: relative;
+    top: 47%;
+    left: -2%;
+    font-size: 25px;
+    color: rgb(87, 54, 9);
+}
+.alert {
+    background-color: #f8d7da; /* Red background color */
+    border: 1px solid #f5c6cb; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Add padding to the content */
+    margin-bottom: 15px; /* Add margin to separate from other elements */
+}

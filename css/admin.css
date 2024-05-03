@@ -4,6 +4,26 @@
 .bg-color{
     background-color: rgb(198, 162, 118);
 }
-.bg-color:hover{
+.bg-color-btn{
+    background-color: rgb(198, 162, 118);
+}
+.bg-color-btn:hover{
     background-color: rgba(198, 162, 118, 0.5);
+}
+.label1{
+    background-color: rgb(216, 180, 134);
+    cursor: pointer;
+}
+.input1{
+    display: none;
+}
+
+input:focus {
+    border: 1px solid rgb(222, 184, 135);
+    box-shadow: 0 0 0 5px rgb(222, 184, 135);
+    outline: 0;
+}
+
+input {
+    border: 1px solid burlywood;
 }

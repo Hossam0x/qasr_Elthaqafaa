@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Sevillana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
@@ -57,7 +56,6 @@
                         <form action="handelers/handelRegister.php" method="POST" >
                 <div class="row">
                   <div class="col-md-12 mb-3 d-flex align-items-center gap-5 justify-content-between">
-
                     <input placeholder="Work Shop Name" type="Work Shop Name" name="name" class="w-100 p-2 rounded-5"  required>
                   </div>
                   <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
@@ -71,7 +69,7 @@
                             <input type="file" accept="image/jpg, image/png, image/jpeg" id="input-file" class="input1 ">
                   </div>
                   <div class="col-md-12 text-cnter d-flex justify-content-center">
-                    <button class="btn rounded-5  text-white px-3 bg-color" type="submit">Add a new workshop</button>
+                    <button class="btn rounded-5  text-white px-3 bg-color-btn" type="submit">Add a new workshop</button>
                   </div>
                 </div>
               </div>

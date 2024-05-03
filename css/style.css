@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "Amatic SC";
+  src: url(../fonts/AmaticSC-Regular.ttf);
+}
+.bg-color{
+  background-color: rgb(155, 132, 101);
+}
+.text-bg-color{
+  background-color:rgb(155, 132, 101) ;
+}
+
 header {
     background-image: url(../images/homePage.jpg);
     height: 100vh;
@@ -32,15 +43,15 @@ header::before {
     color: #fff;
     background-color: rgba(222, 184, 135);
     border: none;
-    border-radius: 45px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
   }
-  
+  .caption_header button{
+    background-color: transparent;
+  }
   .btng:hover {
-    background-color: rgb(119, 108, 75);
     box-shadow: 0px 15px 20px rgba(164, 150, 108, 0.4);
     color: rgba(222, 184, 135, 0.5);
     transform: translateY(-7px);

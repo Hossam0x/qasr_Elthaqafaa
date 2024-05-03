@@ -1,10 +1,19 @@
+.bg-color{
+    background-color: rgb(155, 132, 101);
+}
+
+.text-bg-color{
+    background-color:rgb(155, 132, 101) ;
+}
+
 .bg-color-table{
-    background: rgb(255,255,255);
+background: rgb(255,255,255);
 background: linear-gradient(288deg, rgba(255,255,255,1) 0%, rgb(212, 184, 126) 100%);
 }
 .table{
     --bs-table-bg: none ;
 }
+
 caption{
     bottom: 110%;
     left: 50%;
@@ -12,12 +21,14 @@ caption{
     z-index: 1;
     color: aliceblue;
 }
+
 svg{
     position: relative;
     left: 50%;
     transform: translate(-50%);
     z-index: -1;
 }
+
 .fill-warning {
 fill:rgb(170, 148, 106);
 }

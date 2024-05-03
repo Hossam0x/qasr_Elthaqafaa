@@ -1,36 +1,16 @@
-<?php
-session_start();
-
-if (!isset($_SESSION['auth'])) {
-    header("Location: login.php");
-    exit; 
-}
-?>
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/signup.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/ss.css">
-    <style>
-    .alert {
-        padding: 19px;
-        margin-bottom: 20px;
-        border: 1px solid transparent;
-        font-size: 18px;
-        border-radius: 20px; /* Adjust the border-radius value to make it more or less rounded */
-    }
+<html lang="en">
 
-    .alert-success {
-        color: #3c763d;
-        background-color: #dff0d8;
-        border-color: #d6e9c6;
-    }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/signup.css">
 </head>
+
 <body>
-<div class="container p-5 bg-white mt-5 position-relative rounded-5 shadow-lg">
+    <div class="container p-5 bg-white mt-5 position-relative rounded-5 shadow-lg">
         <?php
         if (isset($_SESSION["create"])) {
         ?>
@@ -43,16 +23,8 @@ if (!isset($_SESSION['auth'])) {
         unset($_SESSION["create"]);
         }
         ?>
-<<<<<<< Updated upstream
-        <div class="row">
-                <div class="col-md-6 ">
-                    <div class="form_side">
-                        <!-- <h5 class="position-relative pb-2 mb-4 text-center">SignUp</h5> -->
-                        <form action="handelers/handelsign.php" method="POST" >
-=======
-         <div class="form_side">
+        <div class="form_side">
             <form action="handelers/handelRegister.php" method="POST">
->>>>>>> Stashed changes
                 <div class="row">
                     <div class="col-md-6">
                         <div class="col-md-12 mb-3 d-flex align-items-center gap-3 me-2">
@@ -94,6 +66,7 @@ if (!isset($_SESSION['auth'])) {
                     </div>
             </form>
         </div>
-</div>
+    </div>
 </body>
+
 </html>

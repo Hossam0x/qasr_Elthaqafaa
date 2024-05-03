@@ -26,7 +26,11 @@ include "handelers/handelProfile.php";
 </head>
 
 <body>
+<<<<<<< Updated upstream
 <nav class="navbar navbar-expand-lg navbar-dark bg-color" aria-label="Offcanvas navbar large">
+=======
+<nav class="navbar navbar-expand-lg navbar-dark bg-color fixed-top" aria-label="Offcanvas navbar large">
+>>>>>>> Stashed changes
         <div class="container ">
             <h2><a class="navbar-brand" href="index.php"> Qasr AlTHaqafa</a></h2>
             <?php if(isset($_SESSION['auth'])):?>
@@ -39,7 +43,6 @@ include "handelers/handelProfile.php";
             <div class="offcanvas offcanvas-start text-bg-color" tabindex="-1" id="offcanvasNavbar2"
                 aria-labelledby="offcanvasNavbar2Label">
                 <div class="offcanvas-header">
-                    <!-- <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Offcanvas</h5> -->
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
@@ -62,15 +65,15 @@ include "handelers/handelProfile.php";
         </div>
     </nav>
 
-    <header class="p-5 ">
-        <div class="container shadow-lg bg-white z-2  rounded-2">
+    <header class="p-3">
+        <div class="container shadow-lg bg-white z-2  rounded-2 mt-5 mb-4 ">
             <div class="row ">
                 <div class="col-md-6">
                     <div class="upload_photo d-flex w-100 align-items-center justify-content-center h-100 flex-column gap-4">
                         <div class="card  bg-white p-5 rounded-2 text-center border-0 shadow-sm align-items-center justify-content-center  ">
                             <h1><?php echo $user['name']; ?></h1>
                             <p><?php echo $user['username']; ?></p>
-                            <img src="user.jpg" id="profilepic" alt="user_img" class="rounded-circle text-center">
+                            <img src="images/user.jpg" id="profilepic" alt="user_img" class="rounded-circle text-center">
                             <label for="input-file" class="label1 d-block text-white rounded-5 p-2 mt-2 " >Edit photo</label>
                             <input type="file" accept="image/jpg, image/png, image/jpeg" id="input-file" class="input1 ">
                         </div>
@@ -107,10 +110,7 @@ include "handelers/handelProfile.php";
                                         <input placeholder="Your phone number" type="tel" maxlength="11" class="w-100 p-2 rounded-5 mt-4">
                                     </div>
                                     <div class="col-md-12 link">
-                                        <!-- Form for deleting the account -->
-                                        <form method="POST" onsubmit="return confirm('Are you sure you want to delete your account?');">
-                                            <button type="submit" class="btn btn-danger" name="delete">Delete Your Account</button>
-                                        </form>
+                                        <a href="#">Delete Your account</a>
                                         <p class="lead text-danger fs-6">Note that if you delete your account you will lose your data</p>
                                     </div>
                                     <div class="col-md-12 text-center p-3 ">
