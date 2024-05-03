@@ -43,36 +43,28 @@ if (!isset($_SESSION['auth'])) {
         unset($_SESSION["create"]);
         }
         ?>
-<<<<<<< Updated upstream
-        <div class="row">
-                <div class="col-md-6 ">
-                    <div class="form_side">
-                        <!-- <h5 class="position-relative pb-2 mb-4 text-center">SignUp</h5> -->
-                        <form action="handelers/handelsign.php" method="POST" >
-=======
          <div class="form_side">
-            <form action="handelers/handelRegister.php" method="POST">
->>>>>>> Stashed changes
+            <form action="handelers/handelsign.php" method="post">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="col-md-12 mb-3 d-flex align-items-center gap-3 me-2">
                             <label for="name" class="me-auto">FirstName</label>
-                            <input placeholder="firstName" type="text" class="w-100 p-2 rounded-5" id="firstname"
+                            <input placeholder="firstName" type="text" name="fname" class="w-100 p-2 rounded-5" id="firstname"
                                 required>
                         </div>
                         <div class="col-md-12 mb-3 d-flex align-items-center gap-3 me-2">
                             <label for="lastname">LastName</label>
-                            <input placeholder="lastname" type="text" class="w-100 p-2 rounded-5" id="lastname"
+                            <input placeholder="lastname" type="text" name="lname" class="w-100 p-2 rounded-5" id="lastname"
                                 required>
                         </div>
                         <div class="col-md-12 mb-3 d-flex align-items-center gap-5 me-2">
                             <label for="email">Email</label>
-                            <input type="email" class="w-100 p-2 rounded-5" id="email" required
+                            <input type="email" name="email" class="w-100 p-2 rounded-5" id="email" required
                                 placeholder="<?php echo $_SESSION['auth'][1]?>">
                         </div>
                         <div class="col-md-12 mb-3 d-flex align-items-center gap-5 me-2">
                             <label for="phone">Phone</label>
-                            <input type="tel" class="w-100 p-2 rounded-5" id="phone" required placeholder="PhoneNumber">
+                            <input type="tel" name="phone" class="w-100 p-2 rounded-5" id="phone" required placeholder="PhoneNumber">
                         </div>
                     </div>
                     <div class="col-md-6 d-flex align-items-center">
@@ -84,7 +76,7 @@ if (!isset($_SESSION['auth'])) {
                             <label for="visa-num">
                                 <p class="lead ">CardNum: </p>
                             </label>
-                            <input class="rounded-5" id="visa-num" required type="number">
+                            <input class="rounded-5" name="cardnum" id="visa-num" required type="number">
                         </div>
                     </div>
                     <div class="row">

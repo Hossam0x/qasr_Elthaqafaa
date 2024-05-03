@@ -6,11 +6,10 @@ include 'Reservationsdata.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $email = $_POST['email'];
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $firstselect = $_POST['firstselect'];
-    $secondselect = $_POST['secondselect'];
+    $firstname = $_POST['fname'];
+    $lastname = $_POST['lname'];
     $phone = $_POST['phone'];
+    $card=$_POST['cardnum'];
 }
 
 $sql = "INSERT INTO reservations (user_email,type, date,phone,first_name,last_name) VALUES (?,?, ?,?,?,?)";

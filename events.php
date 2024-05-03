@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sevillana&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sevillana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/profile.css">
@@ -59,22 +59,29 @@
             <h3 class="position-relative px-5">Work Shops</h3>
           </div>
           <div class="row me-0 ms-0  g-4">
+          <?php
+            include('database.php');
+            $sqlSelect = "SELECT * FROM storedata where type='Workshop'";
+            $result = mysqli_query($con,$sqlSelect);
+            while($data = mysqli_fetch_array($result)){
+                ?>
             <div class="col-md-4">
               <div class="card border-0 rounded-5 shadow-lg hovering" ">
                 <div class="img overflow-hidden">
-                  <img src="images/image1.jpg" class="card-img-top rounded-top-5 img-fluid " alt="tablet">
+                  <img src="<?php echo $data['image'] ?>" class="card-img-top rounded-top-5 img-fluid " alt="tablet">
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="info_text">
-                    <p class="card-text lead fs-6"><span class="text-primary">Drawing</span> / Wednesday At 5 pm</p>
-                    <p class="card-text">Ticket price <span class="text-success">$100</span></p>
+                    <p class="card-text lead fs-6"><span class="text-primary"><?php echo $data['type'] ?></span> / <?php echo $data['date'] ?></p>
+                    <p class="card-text">Ticket price <span class="text-success"><?php echo $data['price'] ?></span></p>
                   </div>
                   <div class="icon">
-                    <button class="btn btn-ico bg-danger"><a href="sign.php" class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
+                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>"class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
                   </div>
                 </div>
               </div>
             </div>            
+          <?php } ?> <!-- Close the while loop here -->
           </div>
         </div>
       </section>
@@ -84,6 +91,12 @@
             <h3 class="position-relative px-5">Parties</h3>
           </div>
           <div class="row me-0 ms-0  g-4">
+          <?php
+            include('database.php');
+            $sqlSelect = "SELECT * FROM storedata where type='Partie'";
+            $result = mysqli_query($con,$sqlSelect);
+            while($data = mysqli_fetch_array($result)){
+                ?>
             <div class="col-md-4">
               <div class="card border-0 rounded-5 shadow-lg hovering" >
                 <div class="img overflow-hidden">
@@ -91,15 +104,16 @@
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="info_text">
-                    <p class="card-text lead fs-6"><span class="text-primary">Mina 3atallah</span> / Friday 10/12</p>
-                    <p class="card-text">Ticket price <span class="text-success">$100</span></p>
+                    <p class="card-text lead fs-6"><span class="text-primary"><?php echo $data['type'] ?></span> / <?php echo $data['date'] ?></p>
+                    <p class="card-text">Ticket price <span class="text-success"><?php echo $data['price'] ?></span></p>
                   </div>
                   <div class="icon">
-                    <button class="btn btn-ico bg-danger"><a href="sign.php" class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
+                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
                   </div>
                 </div>
               </div>
             </div>
+            <?php } ?>
           </div>
         </div>
       </section>
@@ -110,6 +124,12 @@
             <h3 class="position-relative px-5">book gallery</h3>
           </div>
           <div class="row me-0 ms-0  g-4">
+          <?php
+            include('database.php');
+            $sqlSelect = "SELECT * FROM storedata where type='books'";
+            $result = mysqli_query($con,$sqlSelect);
+            while($data = mysqli_fetch_array($result)){
+                ?>
             <div class="col-md-4">
               <div class="card border-0 rounded-5 shadow-lg hovering" >
                 <div class="img overflow-hidden">
@@ -126,6 +146,7 @@
                 </div>
               </div>
             </div>
+            <?php } ?>
           </div>
         </div>
       </section>
