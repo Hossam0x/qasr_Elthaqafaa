@@ -36,8 +36,9 @@ $stmt->bind_param("sssssss",$email, $type, $date,$phone,$firstname,$lastname,$pr
 if ($stmt->execute()) {
     // Redirect to success page
     $_SESSION['create'] = "ticket added successfully.";
-    header("Location: ../sign.php");
+    header("Location: ../sign.php?id=" . $id);
     exit();
+
 } else {
     echo "Error: " . $sql . "<br>" . $con->error;
 }

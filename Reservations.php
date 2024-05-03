@@ -7,10 +7,17 @@ if (!isset($_SESSION['auth'])) {
     header("Location: login.php");
     exit;
 }
-
 // Get name and email from session
+include 'database.php';
 $name = $_SESSION['auth'][0];
 $email = $_SESSION['auth'][1];
+$sql = "SELECT isadmin FROM user WHERE email = ?";
+$stmt = mysqli_prepare($con, $sql);
+mysqli_stmt_bind_param($stmt, "s", $email);
+mysqli_stmt_execute($stmt);
+mysqli_stmt_bind_result($stmt, $isadmin);
+mysqli_stmt_fetch($stmt);
+mysqli_stmt_close($stmt);
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +57,9 @@ $email = $_SESSION['auth'][1];
                         <li class="nav-item"><a class="nav-link "href="#concerts">Concerts</a></li>
                         <li class="nav-item"><a class="nav-link "href="#plays">Plays</a></li>
                         <li class="nav-item"><a class="nav-link "href="#about-us"> Who we are?</a></li>
+                        <?php if ($isadmin == 1) :?>
                         <li class="nav-item"><a class="nav-link "href="admin.php">adding-items</a></li>
+                        <?php endif;?>
                         <?php if(!isset($_SESSION['auth'])):?>
                         <li class="nav-item"><a class="nav-link "href="login.php">login</a></li>
                         <?php else: ?>

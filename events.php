@@ -1,4 +1,15 @@
-<?php session_start(); ?>
+<?php session_start();
+include 'database.php';
+$email = $_SESSION['auth'][1]; 
+$sql = "SELECT isadmin FROM user WHERE email = ?";
+$stmt = mysqli_prepare($con, $sql);
+mysqli_stmt_bind_param($stmt, "s", $email);
+mysqli_stmt_execute($stmt);
+mysqli_stmt_bind_result($stmt, $isadmin);
+mysqli_stmt_fetch($stmt);
+mysqli_stmt_close($stmt);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +49,9 @@
                         <li class="nav-item"><a class="nav-link "href="#concerts">Concerts</a></li>
                         <li class="nav-item"><a class="nav-link "href="#plays">Plays</a></li>
                         <li class="nav-item"><a class="nav-link "href="#about-us"> Who we are?</a></li>
+                        <?php if ($isadmin == 1) :?>
                         <li class="nav-item"><a class="nav-link "href="admin.php">adding-items</a></li>
+                        <?php endif;?>
                         <?php if(!isset($_SESSION['auth'])):?>
                         <li class="nav-item"><a class="nav-link "href="login.php">login</a></li>
                         <?php else: ?>
@@ -100,7 +113,7 @@
             <div class="col-md-4">
               <div class="card border-0 rounded-5 shadow-lg hovering" >
                 <div class="img overflow-hidden">
-                  <img src="images/party1.jpg" class="card-img-top rounded-top-5 img-fluid " alt="tablet">
+                  <img src="<?php echo $data['image'] ?>" class="card-img-top rounded-top-5 img-fluid " alt="tablet">
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="info_text">
@@ -133,7 +146,7 @@
             <div class="col-md-4">
               <div class="card border-0 rounded-5 shadow-lg hovering" >
                 <div class="img overflow-hidden">
-                  <img src="images/book1.jpeg" class="card-img-top rounded-top-5 img-fluid " alt="tablet">
+                  <img src="<?php echo $data['image'] ?>" class="card-img-top rounded-top-5 img-fluid " alt="tablet">
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="info_text">
@@ -165,7 +178,7 @@
             <div class="col-md-6">
               <div class="card border-0 rounded-5 shadow-lg hovering">
                 <div class="img overflow-hidden">
-                  <img src="images/play1.jpg" class="card-img-top rounded-top-5 img-fluid " alt="tablet">
+                  <img src="<?php echo $data['image'] ?>" class="card-img-top rounded-top-5 img-fluid " alt="tablet">
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="info_text">
