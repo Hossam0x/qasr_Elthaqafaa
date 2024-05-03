@@ -32,3 +32,9 @@ transform: translateX(0.5rem);
 h3{
     font-family: "Sevillana", cursive;
 }
+.bg-color{
+    background-color: rgb(155, 132, 101);
+}
+.text-bg-color{
+    background-color:rgb(155, 132, 101) ;
+}

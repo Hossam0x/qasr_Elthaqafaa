@@ -65,6 +65,15 @@
                                 <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
                                     <input placeholder="Ticket Price" type="Text" name="TicketPrice" class="w-100 p-2 rounded-5" required>
                                 </div>
+                                <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
+                                <select class="form-select rounded-5 p-2 border-secondary " aria-label="Default select example">
+  <option selected>Select the type </option>
+  <option value="1">Work shop</option>
+  <option value="2">Party</option>
+  <option value="3">book gallery</option>
+  <option value="3">plays</option>
+</select>
+                                </div>
                                 <div class="col-md-12 mb-3 d-flex align-items-center gap-3  justify-content-center">
                                     <label for="input-file" class="label1 d-block text-white rounded-5 p-2 mt-2">Upload photo</label>
                                     <input type="file" name="image" accept="image/jpg, image/png, image/jpeg" id="input-file" class="input1">

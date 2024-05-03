@@ -24,6 +24,7 @@ input:focus {
     outline: 0;
 }
 
-input {
+
+input{
     border: 1px solid burlywood;
 }

@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sevillana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/profile.css">
+    <!-- <link rel="stylesheet" href="css/profile.css"> -->
     <link rel="stylesheet" href="css/events.css">
     <title>events</title>
 </head>
