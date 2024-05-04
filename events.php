@@ -1,4 +1,5 @@
 <?php session_start();
+if(isset($_SESSION['auth'])){
 include 'database.php';
 $email = $_SESSION['auth'][1]; 
 $sql = "SELECT isadmin FROM user WHERE email = ?";
@@ -7,7 +8,7 @@ mysqli_stmt_bind_param($stmt, "s", $email);
 mysqli_stmt_execute($stmt);
 mysqli_stmt_bind_result($stmt, $isadmin);
 mysqli_stmt_fetch($stmt);
-mysqli_stmt_close($stmt);
+mysqli_stmt_close($stmt);}
 
 ?>
 <!DOCTYPE html>
@@ -49,7 +50,9 @@ mysqli_stmt_close($stmt);
                         <li class="nav-item"><a class="nav-link "href="#concerts">Concerts</a></li>
                         <li class="nav-item"><a class="nav-link "href="#plays">Plays</a></li>
                         <li class="nav-item"><a class="nav-link "href="#about-us"> Who we are?</a></li>
-                        <?php if ($isadmin == 1) :?>
+                        <?php
+                        if(isset($_SESSION['auth']))
+                        if ($isadmin == 1) :?>
                         <li class="nav-item"><a class="nav-link "href="admin.php">adding-items</a></li>
                         <?php endif;?>
                         <?php if(!isset($_SESSION['auth'])):?>
