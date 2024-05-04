@@ -10,7 +10,7 @@ if (isset($_POST["add"])) {
 
     // Check if file was uploaded successfully
     if ($_FILES['image']['error'] === UPLOAD_ERR_OK) {
-        $targetDirectory = "uploads/";
+        $targetDirectory = "../uploads/";
         $targetFileName = $targetDirectory . basename($_FILES['image']['name']);
         move_uploaded_file($_FILES['image']['tmp_name'], $targetFileName);
         $imagePath = $targetFileName;

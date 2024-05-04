@@ -84,7 +84,8 @@ mysqli_stmt_close($stmt);}
             <div class="col-md-4">
               <div class="card border-0 rounded-5 shadow-lg hovering" ">
                 <div class="img overflow-hidden">
-                  <img src="<?php echo $data['image'] ?>" class="card-img-top rounded-top-5 img-fluid " alt="tablet">
+                  <img src="<?php echo $data['image']?>" class="card-img-top rounded-top-5 img-fluid " alt="tablet">
+                  <!-- <?php echo $data['image']?> -->
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="info_text">
@@ -181,7 +182,7 @@ mysqli_stmt_close($stmt);}
             <div class="col-md-6">
               <div class="card border-0 rounded-5 shadow-lg hovering">
                 <div class="img overflow-hidden">
-                  <img src="<?php echo $data['image'] ?>" class="card-img-top rounded-top-5 img-fluid " alt="tablet">
+                  <img src="<?php echo $data['image']?>" class="card-img-top rounded-top-5 img-fluid " alt="tablet">
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="info_text">
