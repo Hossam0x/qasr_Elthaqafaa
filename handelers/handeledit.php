@@ -25,12 +25,12 @@ if (isset($_POST["edit"])) {
         
         // Update book details with new image
         $sqlUpdate = "UPDATE storedata SET name = '$name', date = '$date', price = '$price', image = '$imagePath' WHERE id = '$id';";
-        $sqlUpdate .= "UPDATE ticketinfo SET ticketno = '$numticket' WHERE name = '$name'";
+        $sqlUpdate .= "UPDATE ticketinfo SET ticketno = '$numticket' ,name='$name' WHERE id = '$id'";
 
     } else {
         // Update book details without changing the image
         $sqlUpdate = "UPDATE storedata SET name = '$name', date = '$date', price = '$price' WHERE id = '$id'; ";
-        $sqlUpdate .= "UPDATE ticketinfo SET ticketno = '$numticket' WHERE name = '$name'";
+        $sqlUpdate .= "UPDATE ticketinfo SET ticketno = '$numticket' ,name='$name' WHERE id='$id'";
     }
 
     if (mysqli_multi_query($con, $sqlUpdate)) {

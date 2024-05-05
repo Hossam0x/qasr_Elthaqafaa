@@ -219,7 +219,7 @@ if(isset($_SESSION['auth'])){
             include('database.php');
             $sqlSelect = "SELECT storedata.*, ticketinfo.ticketno 
               FROM storedata 
-              LEFT JOIN ticketinfo ON storedata.name = ticketinfo.name 
+              LEFT JOIN ticketinfo ON storedata.id = ticketinfo.id 
               WHERE storedata.type='plays'";
 
             $result = mysqli_query($con,$sqlSelect);

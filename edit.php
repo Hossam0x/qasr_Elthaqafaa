@@ -60,14 +60,18 @@
                     <div class="form_side">
                         <h3 class="position-relative pb-2 mb-4 text-center mt-5 mb-3">Edit Items</h3>
                         <?php 
-    if (isset($_GET['id'])) {
-        include("database.php");
-        $id = $_GET['id'];
-        $sql = "SELECT * FROM storedata WHERE id=$id";
-        $result = mysqli_query($con,$sql);
-        $row = mysqli_fetch_array($result);
-    }
-    ?>
+if (isset($_GET['id'])) {
+    include("database.php");
+    $id = $_GET['id'];
+    $sql = "SELECT storedata.*, ticketinfo.ticketno 
+            FROM storedata 
+            LEFT JOIN ticketinfo ON storedata.id = ticketinfo.id 
+            WHERE storedata.id=$id";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+}
+?>
+
                         <form action="../updates/handelers/handeledit.php" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-12 mb-3 d-flex align-items-center gap-5 justify-content-between">
@@ -77,7 +81,7 @@
                                     <input placeholder="Edit WorkShopDate" value="<?php echo $row["date"]; ?>" type="text" name="WorkShopDay" class="w-100 p-2 rounded-5" required>
                                 </div>
                                 <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
-                                    <input placeholder="Numberof tickets Available" type="number" name="numticket" class="w-100 p-2 rounded-5" required>
+                                    <input placeholder="Numberof tickets Available"  type="number" value="<?php echo $row["ticketno"]; ?>" name="numticket" class="w-100 p-2 rounded-5" >
                                 </div>
                                 <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
                                     <input placeholder="Ticket Price" value="<?php echo $row["price"]; ?>" type="Text" name="TicketPrice" class="w-100 p-2 rounded-5" required>
