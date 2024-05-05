@@ -1,4 +1,8 @@
 <?php session_start();
+if(!isset($_SESSION['auth'])){
+  header('Location: ../updates/login.php');
+  exit();
+}
 if(isset($_SESSION['auth'])){
     include 'database.php';
     $email = $_SESSION['auth'][1]; 

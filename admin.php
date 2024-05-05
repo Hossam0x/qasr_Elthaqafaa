@@ -1,4 +1,28 @@
-<?php session_start(); ?>
+<?php session_start();
+if(!isset($_SESSION['auth'])){
+    header('Location: ../updates/login.php');
+    exit();
+  }
+  else{
+    include 'database.php';
+    $email = $_SESSION['auth'][1]; 
+    $sql = "SELECT isadmin FROM user WHERE email = ?";
+    $stmt = mysqli_prepare($con, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $isadmin);
+    mysqli_stmt_fetch($stmt);
+    mysqli_stmt_close($stmt);
+    if($isadmin!=1){
+        header('Location: ../updates/index.php');
+        exit();
+    }
+
+  }
+
+  
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
