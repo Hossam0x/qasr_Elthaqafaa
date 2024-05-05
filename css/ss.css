@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "sellav";
+    src: url(../fonts/Sevillana-Regular.ttf);
+}
+h5{
+    font-family: "sellav";
+}
 body{
     background-color: rgb(247, 239, 228);
     }

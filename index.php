@@ -52,6 +52,7 @@ mysqli_stmt_close($stmt);
                         if(isset($_SESSION['auth']))
                          if ($isadmin == 1) :?>
                         <li class="nav-item"><a class="nav-link "href="admin.php">adding-items</a></li>
+                        <li class="nav-item"><a class="nav-link" href="edit.php">Edit</a></li>
                         <?php endif;?>
                         <?php if(!isset($_SESSION['auth'])):?>
                         <li class="nav-item"><a class="nav-link "href="login.php">login</a></li>

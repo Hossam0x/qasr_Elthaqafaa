@@ -60,6 +60,7 @@ include "handelers/handelProfile.php";
                         <li class="nav-item"><a class="nav-link "href="#about-us"> Who we are?</a></li>
                         <?php if ($isadmin == 1) :?>
                         <li class="nav-item"><a class="nav-link "href="admin.php">adding-items</a></li>
+                        <li class="nav-item"><a class="nav-link" href="edit.php">Edit</a></li>
                         <?php endif;?>
                         <?php if(!isset($_SESSION['auth'])):?>
                         <li class="nav-item"><a class="nav-link "href="login.php">login</a></li>

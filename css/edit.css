@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: "sevillana";
+    src: url(../fonts/Sevillana-Regular.ttf);
+}
 .form_side h3{
     font-family: "Sevillana", cursive;
 } 

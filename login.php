@@ -15,7 +15,7 @@ if(isset($_SESSION['login_error'])) {
 <head>
 <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/ss.css">
-    <link rel="stylesheet" href="log.css">
+    <link rel="stylesheet" href="css/log.css">
     <style>
         /* Custom styles for alert box */
         .alert.alert-danger {
@@ -44,8 +44,8 @@ if(isset($_SESSION['login_error'])) {
                 unset($_SESSION['errors']);
             endif; 
         ?>
-        <div class="row">
-                <div class="col-md-12 ">
+        <div class="row d-flex align-items-center">
+                <div class="col-md-6 ">
                     <div class="form_side">
                         <h5 class="position-relative pb-2 mb-4 text-center">Login</h5>
                         <form action="handelers/handelLogin.php" method="POST" >
@@ -68,6 +68,9 @@ if(isset($_SESSION['login_error'])) {
               <a href="signup.php" class="col">Create new account</a>
                   </div>
             </div>
+    </div>
+    <div class="col-md-6">
+      <img src="images/Welcome-bro.png" class="img-fluid">
     </div>
 </body>
 </html>
