@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,29 +48,47 @@
     <section class="add-item">
         <div class="container">
             <div class="row">
+            <?php if(isset($_SESSION['update'])): ?>
+                                <div class="alert alert-success text-center">
+                             <?php echo $_SESSION['update']; ?>
+                                 </div>
+                             <?php unset($_SESSION['update']); 
+                             ?>
+                            <?php endif;
+                            ?>
                 <div class="col-md-12">
                     <div class="form_side">
                         <h3 class="position-relative pb-2 mb-4 text-center mt-5 mb-3">Edit Items</h3>
-                        <form action="../updates/handelers/handeladminpage.php" method="post" enctype="multipart/form-data">
+                        <?php 
+    if (isset($_GET['id'])) {
+        include("database.php");
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM storedata WHERE id=$id";
+        $result = mysqli_query($con,$sql);
+        $row = mysqli_fetch_array($result);
+    }
+    ?>
+                        <form action="../updates/handelers/handeledit.php" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-12 mb-3 d-flex align-items-center gap-5 justify-content-between">
-                                    <input placeholder="Edit Work Shop Name" type="Work Shop Name" name="name" class="w-100 p-2 rounded-5" required>
+                                    <input placeholder="Edit Work Shop Name" value="<?php echo $row["name"]; ?>" type="Work Shop Name" name="name" class="w-100 p-2 rounded-5" required>
                                 </div>
                                 <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
-                                    <input placeholder="Edit WorkShopDate" type="text" name="WorkShopDay" class="w-100 p-2 rounded-5" required>
+                                    <input placeholder="Edit WorkShopDate" value="<?php echo $row["date"]; ?>" type="text" name="WorkShopDay" class="w-100 p-2 rounded-5" required>
                                 </div>
                                 <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
                                     <input placeholder="Numberof tickets Available" type="number" name="numticket" class="w-100 p-2 rounded-5" required>
                                 </div>
                                 <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
-                                    <input placeholder="Ticket Price" type="Text" name="TicketPrice" class="w-100 p-2 rounded-5" required>
+                                    <input placeholder="Ticket Price" value="<?php echo $row["price"]; ?>" type="Text" name="TicketPrice" class="w-100 p-2 rounded-5" required>
                                 </div>
                                 <div class="col-md-12 mb-3 d-flex align-items-center gap-3  justify-content-center">
                                     <label for="input-file" class="label1 d-block text-white rounded-5 p-2 mt-2">Upload photo</label>
-                                    <input type="file" name="image" accept="image/jpg, image/png, image/jpeg" id="input-file" class="input1">
+                                    <input type="file" name="imagetmp" accept="image/jpg, image/png, image/jpeg" id="input-file" class="input1">
+                                    <input type="hidden" value="<?php echo $id; ?>" name="id">
                                 </div>
                                 <div class="col-md-12 text-cnter d-flex justify-content-center">
-                                    <button class="btn rounded-5 text-white px-3 bg-color-btn" name="add" type="submit">Confirm editing</button>
+                                    <button class="btn rounded-5 text-white px-3 bg-color-btn" name="edit" type="submit">Confirm editing</button>
                                 </div>
                             </div>
                         </form>

@@ -13,13 +13,12 @@ if (mysqli_stmt_prepare($stmt, $sql)) {
 if (isset($_POST['save'])) {
     $name = $_POST['name'];
     $new_email = $_POST['email'];
-    $password = $_POST['password'];
     $username = $_POST['username'];
 
-    $update_query = "UPDATE user SET name=?, email=?, password=?, username=? WHERE email=?";
+    $update_query = "UPDATE user SET name=?, email=?, username=? WHERE email=?";
     $update_stmt = mysqli_stmt_init($con);
     if (mysqli_stmt_prepare($update_stmt, $update_query)) {
-        mysqli_stmt_bind_param($update_stmt, "sssss", $name, $new_email, $password, $username, $email);
+        mysqli_stmt_bind_param($update_stmt, "ssss", $name, $new_email, $username, $email);
         if (mysqli_stmt_execute($update_stmt)) {
             $sql = "SELECT * FROM user WHERE email = ?";
             $stmt = mysqli_stmt_init($con);

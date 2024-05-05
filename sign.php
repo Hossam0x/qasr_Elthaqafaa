@@ -61,10 +61,10 @@ if (!isset($_SESSION['auth'])) {
                             <input placeholder="lastname" type="text" name="lname" class="w-100 p-2 rounded-5" id="lastname" required>
                         </div>
                         <!-- Email Input -->
-                        <div class="col-md-12 mb-3 d-flex align-items-center gap-5 me-2">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" class="w-100 p-2 rounded-5" id="email" required placeholder="<?php echo $_SESSION['auth'][1]?>">
-                        </div>
+                        <!-- <div class="col-md-12 mb-3 d-flex align-items-center gap-5 me-2">
+                            <label for="email">Email</label> -->
+                            <input type="hidden" name="email" class="w-100 p-2 rounded-5" id="email" required value="<?php echo $_SESSION['auth'][1]?>">
+                        <!-- </div> -->
                         <!-- Phone Input -->
                         <div class="col-md-12 mb-3 d-flex align-items-center gap-5 me-2">
                             <label for="phone">Phone</label>

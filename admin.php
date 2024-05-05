@@ -74,6 +74,9 @@
                                     <input placeholder="Ticket Price" type="Text" name="TicketPrice" class="w-100 p-2 rounded-5" required>
                                 </div>
                                 <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
+                                    <input placeholder="Ticket No" type="Text" name="Ticketnum" class="w-100 p-2 rounded-5" required>
+                                </div>
+                                <div class="col-md-12 mb-3 d-flex align-items-center gap-3 justify-content-between">
                                 <select class="form-select rounded-5 p-2 border-secondary " name="select" aria-label="Default select example">
         <option selected>Select the type </option>
         <option value="Workshop">Work shop</option>

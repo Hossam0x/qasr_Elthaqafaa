@@ -80,8 +80,10 @@ mysqli_stmt_close($stmt);
   <thead class="bg-color-table">
     <tr>
     <th>Type</th>
+    <th>Name</th>
     <th>Date</th>
     <th>Action</th>
+    
     </tr>
   </thead>
   <tbody>
@@ -96,6 +98,7 @@ mysqli_stmt_close($stmt);
                  ?>
           <tr>
             <td><?php echo $row['type'] ?></td>
+            <td><?php echo $row['name']?></td>
             <td><?php echo $row['date'] ?></td>
             <td><a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
           </tr>

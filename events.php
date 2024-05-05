@@ -1,14 +1,15 @@
 <?php session_start();
 if(isset($_SESSION['auth'])){
-include 'database.php';
-$email = $_SESSION['auth'][1]; 
-$sql = "SELECT isadmin FROM user WHERE email = ?";
-$stmt = mysqli_prepare($con, $sql);
-mysqli_stmt_bind_param($stmt, "s", $email);
-mysqli_stmt_execute($stmt);
-mysqli_stmt_bind_result($stmt, $isadmin);
-mysqli_stmt_fetch($stmt);
-mysqli_stmt_close($stmt);}
+    include 'database.php';
+    $email = $_SESSION['auth'][1]; 
+    $sql = "SELECT isadmin FROM user WHERE email = ?";
+    $stmt = mysqli_prepare($con, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $isadmin);
+    mysqli_stmt_fetch($stmt);
+    mysqli_stmt_close($stmt);
+}
 
 ?>
 <!DOCTYPE html>
@@ -77,7 +78,11 @@ mysqli_stmt_close($stmt);}
           <div class="row me-0 ms-0  g-4">
           <?php
             include('database.php');
-            $sqlSelect = "SELECT * FROM storedata where type='Workshop'";
+            $sqlSelect = "SELECT storedata.*, ticketinfo.ticketno 
+              FROM storedata 
+              LEFT JOIN ticketinfo ON storedata.name = ticketinfo.name 
+              WHERE storedata.type='Workshop'";
+
             $result = mysqli_query($con,$sqlSelect);
             while($data = mysqli_fetch_array($result)){
                 ?>
@@ -91,11 +96,20 @@ mysqli_stmt_close($stmt);}
                   <div class="info_text">
                     <p class="card-text lead fs-6"><span class="text-primary"><?php echo $data['name'] ?></span> / <?php echo $data['date'] ?></p>
                     <p class="card-text">Ticket price <span class="text-success"><?php echo $data['price'] ?></span></p>
-                    <p class="card-text">Tickets Available <span class="text-info">100 ticket</span></p>
+                    <p class="card-text">Tickets Available <span class="text-info"><?php echo $data['ticketno']?></span></p>
                   </div>
                   <div class="icon d-flex align-items-center gap-3">
-                    <button class="btn btn-ico bg-primary"><a href="edit.php>"class="text-white text-decoration-none">Edit</a></button>
-                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>"class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
+                    <?php if($isadmin==1):?>
+                    <button class="btn btn-ico bg-primary"><a href="edit.php?id=<?php echo $data['id'];?>"class="text-white text-decoration-none">Edit</a></button>
+                    <?php else:?>
+                    <?php if (intval($data['ticketno']) > 0): ?>
+                        <button class="btn btn-ico bg-danger">
+                            <a href="sign.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a>
+                        </button>
+                    <?php else: ?>
+                        <p class="text-danger">Tickets are sold out</p> <!-- أو رسالة أخرى تناسب الحالة -->
+                    <?php endif; ?>
+                    <?php endif;?>
                   </div>
                 </div>
               </div>
@@ -112,7 +126,11 @@ mysqli_stmt_close($stmt);}
           <div class="row me-0 ms-0  g-4">
           <?php
             include('database.php');
-            $sqlSelect = "SELECT * FROM storedata where type='Party'";
+            $sqlSelect = "SELECT storedata.*, ticketinfo.ticketno 
+              FROM storedata 
+              LEFT JOIN ticketinfo ON storedata.name = ticketinfo.name 
+              WHERE storedata.type='party'";
+
             $result = mysqli_query($con,$sqlSelect);
             while($data = mysqli_fetch_array($result)){
                 ?>
@@ -125,10 +143,22 @@ mysqli_stmt_close($stmt);}
                   <div class="info_text">
                     <p class="card-text lead fs-6"><span class="text-primary"><?php echo $data['name'] ?></span> / <?php echo $data['date'] ?></p>
                     <p class="card-text">Ticket price <span class="text-success"><?php echo $data['price'] ?></span></p>
-                    <p class="card-text">Tickets Available <span class="text-info">100 ticket</span></p>
+                    <p class="card-text">Tickets Available <span class="text-info"><?php echo $data['ticketno']?></span></p>
                   </div>
                   <div class="icon">
-                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
+                  <?php if ($isadmin == 1): ?>
+                    <button class="btn btn-ico bg-primary">
+                        <a href="edit.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Edit</a>
+                    </button>
+                <?php else: ?>
+                    <?php if (intval($data['ticketno']) > 0): ?>
+                        <button class="btn btn-ico bg-danger">
+                            <a href="sign.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Book Now <i class="fa-solid fa-arrow-right text-white"></i></a>
+                        </button>
+                    <?php else: ?>
+                        <p class="text-danger">Tickets are sold out</p> <!-- أو رسالة أخرى تناسب الحالة -->
+                    <?php endif; ?>
+                <?php endif; ?>
                   </div>
                 </div>
               </div>
@@ -146,7 +176,11 @@ mysqli_stmt_close($stmt);}
           <div class="row me-0 ms-0  g-4">
           <?php
             include('database.php');
-            $sqlSelect = "SELECT * FROM storedata where type='book gallery'";
+            $sqlSelect = "SELECT storedata.*, ticketinfo.ticketno 
+              FROM storedata 
+              LEFT JOIN ticketinfo ON storedata.name = ticketinfo.name 
+              WHERE storedata.type='book gallery'";
+
             $result = mysqli_query($con,$sqlSelect);
             while($data = mysqli_fetch_array($result)){
                 ?>
@@ -159,10 +193,14 @@ mysqli_stmt_close($stmt);}
                   <div class="info_text">
                     <p class="card-text lead fs-6"><span class="text-primary"><?php echo $data['name'] ?></span> / <?php echo $data['date'] ?></p>
                     <p class="card-text">Ticket price <span class="text-success"><?php echo $data['price'] ?></span></p>
-                    <p class="card-text">Tickets Available <span class="text-info">100 ticket</span></p>
+                    <p class="card-text">Tickets Available <span class="text-info"><?php echo $data['ticketno']?></span></p>
                   </div>
                   <div class="icon">
-                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
+                  <?php if($isadmin==1):?>
+                    <button class="btn btn-ico bg-primary"><a href="edit.php?id=<?php echo $data['id'];?>"class="text-white text-decoration-none">Edit</a></button>
+                    <?php else:?>
+                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>"class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
+                    <?php endif;?>
                   </div>
                 </div>
               </div>
@@ -179,7 +217,11 @@ mysqli_stmt_close($stmt);}
           <div class="row me-0 ms-0  g-4 ">
           <?php
             include('database.php');
-            $sqlSelect = "SELECT * FROM storedata where type='plays'";
+            $sqlSelect = "SELECT storedata.*, ticketinfo.ticketno 
+              FROM storedata 
+              LEFT JOIN ticketinfo ON storedata.name = ticketinfo.name 
+              WHERE storedata.type='plays'";
+
             $result = mysqli_query($con,$sqlSelect);
             while($data = mysqli_fetch_array($result)){
                 ?>
@@ -192,11 +234,14 @@ mysqli_stmt_close($stmt);}
                   <div class="info_text">
                     <p class="card-text lead fs-6"><span class="text-primary"><?php echo $data['name'] ?></span> / <?php echo $data['date'] ?></p>
                     <p class="card-text">Ticket price <span class="text-success"><?php echo $data['price'] ?></span></p>
-                    <p class="card-text">Tickets Available <span class="text-info">100 ticket</span></p>
+                    <p class="card-text">Tickets Available <span class="text-info"><?php echo $data['ticketno']?></span></p>
                   </div>
                   <div class="icon">
-                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
-                  </div>
+                  <?php if($isadmin==1):?>
+                    <button class="btn btn-ico bg-primary"><a href="edit.php?id=<?php echo $data['id'];?>"class="text-white text-decoration-none">Edit</a></button>
+                    <?php else:?>
+                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>"class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
+                    <?php endif;?>                  </div>
                 </div>
               </div>
             </div>

@@ -60,7 +60,6 @@ include "handelers/handelProfile.php";
                         <li class="nav-item"><a class="nav-link "href="#about-us"> Who we are?</a></li>
                         <?php if ($isadmin == 1) :?>
                         <li class="nav-item"><a class="nav-link "href="admin.php">adding-items</a></li>
-                        <li class="nav-item"><a class="nav-link" href="edit.php">Edit</a></li>
                         <?php endif;?>
                         <?php if(!isset($_SESSION['auth'])):?>
                         <li class="nav-item"><a class="nav-link "href="login.php">login</a></li>
@@ -106,7 +105,7 @@ include "handelers/handelProfile.php";
                                         </div>
                                     </div>
                                     <div class="col-md-12 mb-3">
-                                        <input placeholder="Password" type="password" class="w-100 p-2 rounded-5 position-relative mt-4" name="password" value="<?php echo $user['password']; ?>">
+                                        <input placeholder="Password" type="password" class="w-100 p-2 rounded-5 position-relative mt-4" name="password" value="">
                                         <div class="change-pass position-absolute">
                                             <a href="#" class="text-decoration-none">Change password</a>
                                         </div>

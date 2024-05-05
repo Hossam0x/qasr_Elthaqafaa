@@ -23,14 +23,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $type=$row['type'];
         $date=$row['date'];
         $price=$row['price'];
+        $name=$row['name'];
     }
 
 
-$sql = "INSERT INTO reservations (user_email,type, date,phone,first_name,last_name,price) VALUES (?,?, ?,?,?,?,?)";
+$sql = "INSERT INTO reservations (user_email,type,name, date,phone,first_name,last_name,price) VALUES (?,?,?, ?,?,?,?,?)";
+
     
 // Prepare and bind parameters
 $stmt = $con->prepare($sql);
-$stmt->bind_param("sssssss",$email, $type, $date,$phone,$firstname,$lastname,$price);
+$stmt->bind_param("ssssssss",$email, $type,$name, $date,$phone,$firstname,$lastname,$price);
 
 // Execute the statement
 if ($stmt->execute()) {
