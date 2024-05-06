@@ -32,10 +32,10 @@
                 unset($_SESSION['errors']);
             endif; 
         ?>
-            <div class="row d-flex align-items-center">
-                <div class="col-md-6 ">
+            <div class="row">
+                <div class="col-md-12 ">
                     <div class="form_side">
-                        <h5 class="position-relative pb-2 mb-4 text-center" style="font-size:32px; font-weight:700;">SignUp</h5>
+                        <h5 class="position-relative pb-2 mb-4 text-center">SignUp</h5>
                         <form action="handelers/handelRegister.php" method="POST" >
                 <div class="row">
                   <div class="col-md-12 mb-3 d-flex align-items-center gap-5 justify-content-between">
@@ -64,9 +64,6 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-      <img src="images/Welcome-sign.png" class="img-fluid w-75">
-    </div>
           </div>
         </div>
       </div>

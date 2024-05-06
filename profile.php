@@ -35,7 +35,7 @@ include "handelers/handelProfile.php";
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-color " aria-label="Offcanvas navbar large">
+<nav class="navbar navbar-expand-lg navbar-dark bg-color fixed-top" aria-label="Offcanvas navbar large">
         <div class="container ">
             <h2><a class="navbar-brand" href="index.php"> Qasr AlTHaqafa</a></h2>
             <?php if(isset($_SESSION['auth'])):?>
@@ -71,8 +71,9 @@ include "handelers/handelProfile.php";
             </div>
         </div>
     </nav>
-    <header class="p-2">
-        <div class="container shadow-lg bg-white z-2  rounded-2 ">
+
+    <header class="p-3">
+        <div class="container shadow-lg bg-white z-2  rounded-2 mt-5 mb-4 ">
             <div class="row ">
                 <div class="col-md-6">
                     <div class="upload_photo d-flex w-100 align-items-center justify-content-center h-100 flex-column gap-4">

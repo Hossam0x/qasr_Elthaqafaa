@@ -17,7 +17,6 @@ mysqli_stmt_close($stmt);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -67,7 +66,6 @@ mysqli_stmt_close($stmt);
 <header>
     <div
       class="caption_header container d-flex align-items-center justify-content-center text-white flex-column text-center ">
-      <h3 class="text-white">Welcome To Palace of Culture</h3>
       <div>
         <button class="btn btng text-white"><a class="text-decoration-none" href="events.php">Click to see our events</a></button>
       </div>
@@ -155,7 +153,7 @@ mysqli_stmt_close($stmt);
          <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                <h3>Our <span>Location !</span></h3>
+                <h3>Find<span class="text-danger">US</span></h3>
                 </div>
             </div>
             <div class="row">
@@ -168,17 +166,6 @@ mysqli_stmt_close($stmt);
          </div>               
     </section>
 </main>
-<footer class="bg-color text-white">
-    <div class="container p-3">
-      <div class="copy_right d-flex align-items-center justify-content-center">
-        <i class="fa-regular fa-copyright fa-xs"></i>
-        <p class="pt-2">Copyright <span class ="text-white">Qasr AlTHqafa</span>. All Rights Reserved</p>
-      </div>
-      <div class="designed_by text-center">
-        <p>Follow us <a href= "https://www.facebook.com/engalaa9093"><i class="fa-brands fa-facebook text-white"></i></a></p>
-      </div>
-    </div>
-  </footer>
 <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
