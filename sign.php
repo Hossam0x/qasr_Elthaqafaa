@@ -13,6 +13,8 @@ if (!isset($_SESSION['auth'])) {
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/ss.css">
     <style>
@@ -33,6 +35,11 @@ if (!isset($_SESSION['auth'])) {
 </head>
 <body>
     <div class="container p-5 bg-white mt-5 position-relative rounded-5 shadow-lg">
+        <div class="arrows-icon d-flex align-items-center justify-content-between mb-5">
+            <a href="events.php" class="text-black"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="Reservations.php" class="text-black"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+   
         <!-- Display success message if it exists -->
         <?php
         if (isset($_SESSION["create"])) {
@@ -48,8 +55,8 @@ if (!isset($_SESSION['auth'])) {
         ?>
         <div class="form_side">
             <form action="handelers/handelsign.php<?php if(isset($_GET['id'])) { echo '?id=' . $_GET['id']; } ?>" method="post">
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row d-flex align-items-center justify-content-between">
+                    <div class="col-md-6 ">
                         <!-- First Name Input -->
                         <div class="col-md-12 mb-3 d-flex align-items-center gap-3 me-2">
                             <label for="name" class="me-auto">FirstName</label>
@@ -68,14 +75,12 @@ if (!isset($_SESSION['auth'])) {
                         <!-- Phone Input -->
                         <div class="col-md-12 mb-3 d-flex align-items-center gap-5 me-2">
                             <label for="phone">Phone</label>
-                            <input type="tel" name="phone" class="w-100 p-2 rounded-5" id="phone" required placeholder="PhoneNumber">
+                            <input type="tel" name="phone" class="w-100 p-2  rounded-5" id="phone" required placeholder="PhoneNumber">
                         </div>
                     </div>
                     <div class="col-md-6 d-flex align-items-center">
                         <!-- Visa Image -->
-                        <div class="col-md-6 visa">
-                            <img src="images/visa.jpg" class="rounded-5 w-100 img-fluid shadow-lg position-relative">
-                        </div>
+                       <img src="images/Credit card.png" class="img-fluid w-50">
                         <div class="col-md-6 ">
                             <?php 
                             include 'database.php';
@@ -105,7 +110,7 @@ if (!isset($_SESSION['auth'])) {
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center mt-5">
-                            <button class="btn" type="submit">Confirm Payment</button>
+                            <button class="btn text-white rounded-5" type="submit">Confirm Payment</button>
                         </div>
                     </div>
                 </div>

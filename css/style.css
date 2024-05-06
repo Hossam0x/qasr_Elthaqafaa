@@ -1,7 +1,8 @@
 @font-face {
-  font-family: "Amatic SC";
+  font-family: "Amatic";
   src: url(../fonts/AmaticSC-Regular.ttf);
 }
+
 .bg-color{
   background-color: rgb(155, 132, 101);
 }
@@ -31,10 +32,25 @@ header::before {
     transform: translate(-50%);
 }
 .caption_header a{
-    font-family:  "Amatic SC", sans-serif;
+    font-family:  "Amatic", sans-serif;
     font-size: 32px;
     font-weight: 700;
     color: #fff;
+}
+.caption_header h3{
+    font-family:  "Amatic", sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+}
+h3{
+    font-family:  "Amatic", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: black;
+}
+span{
+  color:rgb(155, 132, 101);
 }
 .btng {
     padding: 1.5em 3em;

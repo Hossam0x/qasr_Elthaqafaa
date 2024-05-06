@@ -44,7 +44,7 @@ if(isset($_SESSION['login_error'])) {
                 unset($_SESSION['errors']);
             endif; 
         ?>
-        <div class="row d-flex align-items-center">
+        <div class="row d-flex align-items-center text-center">
                 <div class="col-md-6 ">
                     <div class="form_side">
                         <h5 class="position-relative pb-2 mb-4 text-center">Login</h5>
@@ -59,8 +59,8 @@ if(isset($_SESSION['login_error'])) {
                     <input placeholder="Password" type="password" name="password" class="w-100 p-2 rounded-5 ms-2" id="password" required>
                   </div>
                   <div class="col-md-12 mb-3 d-flex align-items-center gap-2 " >
-                  <div class="col-md-12 text-center">
-                    <button class="btn rounded-5  text-white px-3" type="submit" name="login">Confirm</button>
+                  <div class="col-md-12 text-center d-flex justify-content-center align-items-center">
+                    <button class="btn rounded-5  text-white px-3 " type="submit" name="login">Confirm</button>
                   </div>
                 </div>
               </div>
@@ -70,7 +70,9 @@ if(isset($_SESSION['login_error'])) {
             </div>
     </div>
     <div class="col-md-6">
-      <img src="images/Welcome-bro.png" class="img-fluid">
+      <img src="images/Welcome-bro.png" class="img-fluid w-75">
     </div>
+          </div>
+          </div>
 </body>
 </html>

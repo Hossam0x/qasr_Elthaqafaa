@@ -72,7 +72,7 @@ if(isset($_SESSION['auth'])){
     </nav>
    <main>
     <section class="heading text-center">
-      <h3>Our events</h3>
+      <h3 class="position-relative mt-3">Our events</h3>
     </section>
     <section class="workshops">
         <div class="container mt-5 ">
