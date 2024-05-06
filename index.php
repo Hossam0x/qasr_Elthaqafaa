@@ -256,7 +256,11 @@ We have workshops to teach sculpture </p>
          </div>               
     </section>
 </main>
+<<<<<<< HEAD
 <footer class="bg-color text-white ">
+=======
+<footer class="bg-color text-white">
+>>>>>>> 3e3879a9cd67d0407b0cbd801801807981b04017
     <div class="container p-3">
       <div class="copy_right d-flex align-items-center justify-content-center">
         <i class="fa-regular fa-copyright fa-xs"></i>
