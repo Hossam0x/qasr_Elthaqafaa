@@ -1,4 +1,6 @@
-
+body{
+    background-color: rgb(247, 239, 228);
+    }
 h3::before{
     content: "";
     position: absolute;

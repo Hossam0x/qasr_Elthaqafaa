@@ -1,12 +1,15 @@
-header {
-    background-image: url(../images/over_lay.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: auto;
-    background-attachment: fixed;
-}
-
+body{
+    background-color: rgb(247, 239, 228);
+    }
+    @font-face {
+        font-family: "sellav";
+        src: url(../fonts/Sevillana-Regular.ttf);
+    }
+    h5{
+        font-family: "sellav";
+        font-weight: 700;
+        font-size: 32px;
+    }
 .counter_icon i {
     width: 60px;
     height: 60px;

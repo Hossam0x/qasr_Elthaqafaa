@@ -50,11 +50,10 @@ if(isset($_SESSION['auth'])){
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" >
-                        <li class="nav-item"><a class="nav-link active aria-current= page" href="#courses">WorkShops</a></li>
-                        <li class="nav-item"><a class="nav-link "href="#bazar">Bazar</a></li>
-                        <li class="nav-item"><a class="nav-link "href="#concerts">Concerts</a></li>
+                        <li class="nav-item"><a class="nav-link active aria-current= page" href="#workshops">WorkShops</a></li>
+                        <li class="nav-item"><a class="nav-link "href="#party">Party</a></li>
+                        <li class="nav-item"><a class="nav-link "href="#bookgallery">book gallery</a></li>
                         <li class="nav-item"><a class="nav-link "href="#plays">Plays</a></li>
-                        <li class="nav-item"><a class="nav-link "href="#about-us"> Who we are?</a></li>
                         <?php
                         if(isset($_SESSION['auth']))
                         if ($isadmin == 1) :?>
@@ -72,9 +71,9 @@ if(isset($_SESSION['auth'])){
     </nav>
    <main>
     <section class="heading text-center">
-      <h3>Our events</h3>
+      <h3 class="position-relative mt-3">Our events</h3>
     </section>
-    <section class="workshops">
+    <section class="workshops" id="workshops">
         <div class="container mt-5 ">
           <div class="heading-title mb-5">
             <h3 class="position-relative px-5">Work Shops</h3>
@@ -122,7 +121,7 @@ if(isset($_SESSION['auth'])){
           </div>
         </div>
       </section>
-    <section class="Party">
+    <section class="Party" id="party">
         <div class="container mt-5 ">
           <div class="heading-title mb-5">
             <h3 class="position-relative px-5">Parties</h3>
@@ -172,7 +171,7 @@ if(isset($_SESSION['auth'])){
         </div>
       </section>
       
-      <section class="books">
+      <section class="books" id="bookgallery">
         <div class="container mt-5 ">
           <div class="heading-title mb-5">
             <h3 class="position-relative px-5">book gallery</h3>
@@ -213,7 +212,7 @@ if(isset($_SESSION['auth'])){
           </div>
         </div>
       </section>
-      <section class="plays">
+      <section class="plays" id="plays">
         <div class="container mt-5 "> 
           <div class="heading-title mb-5">
             <h3 class="position-relative px-5">plays</h3>

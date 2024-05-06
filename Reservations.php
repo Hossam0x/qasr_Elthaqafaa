@@ -51,15 +51,15 @@ mysqli_stmt_close($stmt);
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" >
-                        <li class="nav-item"><a class="nav-link active aria-current= page" href="#courses">WorkShops</a></li>
-                        <li class="nav-item"><a class="nav-link "href="#bazar">Bazar</a></li>
-                        <li class="nav-item"><a class="nav-link "href="#concerts">Concerts</a></li>
-                        <li class="nav-item"><a class="nav-link "href="#plays">Plays</a></li>
-                        <li class="nav-item"><a class="nav-link "href="#about-us"> Who we are?</a></li>
-                        <?php if ($isadmin == 1) :?>
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" >
+                        <li class="nav-item"><a class="nav-link active aria-current= page"href="index.php"> Who we are?</a></li>
+                        <li class="nav-item"><a class="nav-link"href="index.php"> Our Services</a></li>
+                        <li class="nav-item"><a class="nav-link"href="index.php"> Location</a></li>
+
+                        <?php
+                        if(isset($_SESSION['auth']))
+                         if ($isadmin == 1) :?>
                         <li class="nav-item"><a class="nav-link "href="admin.php">adding-items</a></li>
-                        <li class="nav-item"><a class="nav-link" href="edit.php">Edit</a></li>
                         <?php endif;?>
                         <?php if(!isset($_SESSION['auth'])):?>
                         <li class="nav-item"><a class="nav-link "href="login.php">login</a></li>
