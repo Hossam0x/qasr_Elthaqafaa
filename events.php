@@ -243,11 +243,19 @@ if(isset($_SESSION['auth'])){
                     <p class="card-text">Tickets Available <span class="text-info"><?php echo $data['ticketno']?></span></p>
                   </div>
                   <div class="icon">
+<<<<<<< HEAD
                   <button class="btn bg-danger"><a href="events.php"class="text-white text-decoration-none">Delete</a></button>
                   <?php if($isadmin==1):?>
                     <button class="btn btn-ico bg-primary"><a href="edit.php?id=<?php echo $data['id'];?>"class="text-white text-decoration-none">Edit</a></button>
                     <?php else:?>
                     <button class="btn btn-ico bg-warning"><a href="sign.php?id=<?php echo $data['id']; ?>"class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
+=======
+                  
+                  <?php if($isadmin==1):?>
+                    <button class="btn btn-ico bg-primary"><a href="edit.php?id=<?php echo $data['id'];?>"class="text-white text-decoration-none">Edit</a></button>
+                    <?php else:?>
+                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>"class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
+>>>>>>> 6ec67cf8ace0e72d0133ea05c0b4f8bbf79c25e7
                     <?php endif;?>  
                                   
                   </div>
