@@ -50,17 +50,12 @@ if(!isset($_SESSION['auth'])){
             <div class="offcanvas offcanvas-start text-bg-color" tabindex="-1" id="offcanvasNavbar2"
                 aria-labelledby="offcanvasNavbar2Label">
                 <div class="offcanvas-header">
-                    <!-- <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Offcanvas</h5> -->
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item"><a class="nav-link active aria-current= page" href="#courses">WorkShops</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#bazar">Bazar</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#concerts">Concerts</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#plays">Plays</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about-us">Who we are?</a></li>
+                        <li class="nav-item"><a class="nav-link active aria-current= page" href="events.php">Events</a></li>
                         <li class="nav-item"><a class="nav-link" href="admin.php">Adding Items</a></li>
                         <li class="nav-item"><a class="nav-link" href="edit.php">Edit</a></li>
                         <?php if(!isset($_SESSION['auth'])): ?>
