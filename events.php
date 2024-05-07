@@ -83,7 +83,7 @@ if(isset($_SESSION['auth'])){
             include('database.php');
             $sqlSelect = "SELECT storedata.*, ticketinfo.ticketno 
               FROM storedata 
-              LEFT JOIN ticketinfo ON storedata.name = ticketinfo.name 
+              LEFT JOIN ticketinfo ON storedata.id = ticketinfo.id 
               WHERE storedata.type='Workshop'";
 
             $result = mysqli_query($con,$sqlSelect);
@@ -131,7 +131,7 @@ if(isset($_SESSION['auth'])){
             include('database.php');
             $sqlSelect = "SELECT storedata.*, ticketinfo.ticketno 
               FROM storedata 
-              LEFT JOIN ticketinfo ON storedata.name = ticketinfo.name 
+              LEFT JOIN ticketinfo ON storedata.id = ticketinfo.id 
               WHERE storedata.type='party'";
 
             $result = mysqli_query($con,$sqlSelect);
@@ -181,7 +181,7 @@ if(isset($_SESSION['auth'])){
             include('database.php');
             $sqlSelect = "SELECT storedata.*, ticketinfo.ticketno 
               FROM storedata 
-              LEFT JOIN ticketinfo ON storedata.name = ticketinfo.name 
+              LEFT JOIN ticketinfo ON storedata.id = ticketinfo.id 
               WHERE storedata.type='book gallery'";
 
             $result = mysqli_query($con,$sqlSelect);
