@@ -72,6 +72,12 @@ if(isset($_SESSION['auth'])){
    <main>
     <section class="heading text-center">
       <h3 class="position-relative mt-3">Our events</h3>
+      <?php if(isset($_SESSION['delete'])): ?>
+    <div class="alert alert-success text-center">
+        <?php echo $_SESSION['delete']; ?>
+    </div>
+    <?php unset($_SESSION['delete']); ?>
+<?php endif; ?>
     </section>
     <section class="workshops" id="workshops">
         <div class="container mt-5 ">
@@ -102,8 +108,9 @@ if(isset($_SESSION['auth'])){
                     <p class="card-text">Tickets Available <span class="text-info"><?php echo $data['ticketno']?></span></p>
                   </div>
                   <div class="icon d-flex align-items-center gap-3">
-                    <button class="btn bg-danger"><a href="events.php"class="text-white text-decoration-none">Delete</a></button>
+                    
                     <?php if($isadmin==1):?>
+                    <button class="btn bg-danger"><a href="handelers/handeldelete.php?id=<?php echo $data['id'];?>"class="text-white text-decoration-none">Delete</a></button>
                     <button class="btn btn-ico bg-primary"><a href="edit.php?id=<?php echo $data['id'];?>"class="text-white text-decoration-none">Edit</a></button>
                     <?php else:?>
                     <?php if (intval($data['ticketno']) > 0): ?>
@@ -243,27 +250,11 @@ if(isset($_SESSION['auth'])){
                     <p class="card-text">Tickets Available <span class="text-info"><?php echo $data['ticketno']?></span></p>
                   </div>
                   <div class="icon">
-<<<<<<< Updated upstream
-<<<<<<< HEAD
                   <button class="btn bg-danger"><a href="events.php"class="text-white text-decoration-none">Delete</a></button>
                   <?php if($isadmin==1):?>
                     <button class="btn btn-ico bg-primary"><a href="edit.php?id=<?php echo $data['id'];?>"class="text-white text-decoration-none">Edit</a></button>
                     <?php else:?>
                     <button class="btn btn-ico bg-warning"><a href="sign.php?id=<?php echo $data['id']; ?>"class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
-=======
-                  
-                  <?php if($isadmin==1):?>
-                    <button class="btn btn-ico bg-primary"><a href="edit.php?id=<?php echo $data['id'];?>"class="text-white text-decoration-none">Edit</a></button>
-                    <?php else:?>
-                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>"class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
->>>>>>> 6ec67cf8ace0e72d0133ea05c0b4f8bbf79c25e7
-=======
-                  <button class="btn bg-danger"><a href="events.php"class="text-white text-decoration-none">Delete</a></button>
-                  <?php if($isadmin==1):?>
-                    <button class="btn btn-ico bg-primary"><a href="edit.php?id=<?php echo $data['id'];?>"class="text-white text-decoration-none">Edit</a></button>
-                    <?php else:?>
-                    <button class="btn btn-ico bg-warning"><a href="sign.php?id=<?php echo $data['id']; ?>"class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
->>>>>>> Stashed changes
                     <?php endif;?>  
                                   
                   </div>
