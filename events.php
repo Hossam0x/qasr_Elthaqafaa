@@ -102,11 +102,12 @@ if(isset($_SESSION['auth'])){
                     <p class="card-text">Tickets Available <span class="text-info"><?php echo $data['ticketno']?></span></p>
                   </div>
                   <div class="icon d-flex align-items-center gap-3">
+                    <button class="btn bg-danger"><a href="events.php"class="text-white text-decoration-none">Delete</a></button>
                     <?php if($isadmin==1):?>
                     <button class="btn btn-ico bg-primary"><a href="edit.php?id=<?php echo $data['id'];?>"class="text-white text-decoration-none">Edit</a></button>
                     <?php else:?>
                     <?php if (intval($data['ticketno']) > 0): ?>
-                        <button class="btn btn-ico bg-danger">
+                        <button class="btn btn-ico bg-warning">
                             <a href="sign.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a>
                         </button>
                     <?php else: ?>
@@ -148,14 +149,15 @@ if(isset($_SESSION['auth'])){
                     <p class="card-text">Ticket price <span class="text-success"><?php echo $data['price'] ?></span></p>
                     <p class="card-text">Tickets Available <span class="text-info"><?php echo $data['ticketno']?></span></p>
                   </div>
-                  <div class="icon">
+                  <div class="icon d-flex align-items-center gap-3">
+                  <button class="btn bg-danger"><a href="events.php"class="text-white text-decoration-none">Delete</a></button>
                   <?php if ($isadmin == 1): ?>
                     <button class="btn btn-ico bg-primary">
                         <a href="edit.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Edit</a>
                     </button>
                 <?php else: ?>
                     <?php if (intval($data['ticketno']) > 0): ?>
-                        <button class="btn btn-ico bg-danger">
+                        <button class="btn btn-ico bg-warning">
                             <a href="sign.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Book Now <i class="fa-solid fa-arrow-right text-white"></i></a>
                         </button>
                     <?php else: ?>
@@ -198,11 +200,12 @@ if(isset($_SESSION['auth'])){
                     <p class="card-text">Ticket price <span class="text-success"><?php echo $data['price'] ?></span></p>
                     <p class="card-text">Tickets Available <span class="text-info"><?php echo $data['ticketno']?></span></p>
                   </div>
-                  <div class="icon">
+                  <div class="icon d-flex align-items-center gap-3">
+                  <button class="btn bg-danger"><a href="events.php"class="text-white text-decoration-none">Delete</a></button>
                   <?php if($isadmin==1):?>
                     <button class="btn btn-ico bg-primary"><a href="edit.php?id=<?php echo $data['id'];?>"class="text-white text-decoration-none">Edit</a></button>
                     <?php else:?>
-                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>"class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
+                    <button class="btn btn-ico bg-warning"><a href="sign.php?id=<?php echo $data['id']; ?>"class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
                     <?php endif;?>
                   </div>
                 </div>
@@ -240,12 +243,16 @@ if(isset($_SESSION['auth'])){
                     <p class="card-text">Tickets Available <span class="text-info"><?php echo $data['ticketno']?></span></p>
                   </div>
                   <div class="icon">
+                  <button class="btn bg-danger"><a href="events.php"class="text-white text-decoration-none">Delete</a></button>
                   <?php if($isadmin==1):?>
                     <button class="btn btn-ico bg-primary"><a href="edit.php?id=<?php echo $data['id'];?>"class="text-white text-decoration-none">Edit</a></button>
                     <?php else:?>
-                    <button class="btn btn-ico bg-danger"><a href="sign.php?id=<?php echo $data['id']; ?>"class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
-                    <?php endif;?>                  </div>
+                    <button class="btn btn-ico bg-warning"><a href="sign.php?id=<?php echo $data['id']; ?>"class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a></button>
+                    <?php endif;?>  
+                                  
+                  </div>
                 </div>
+
               </div>
             </div>
             <?php } ?>

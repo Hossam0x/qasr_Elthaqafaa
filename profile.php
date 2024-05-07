@@ -56,6 +56,8 @@ include "handelers/handelProfile.php";
                         <li class="nav-item"><a class="nav-link active aria-current= page"href="index.php"> Who we are?</a></li>
                         <li class="nav-item"><a class="nav-link"href="index.php"> Our Services</a></li>
                         <li class="nav-item"><a class="nav-link"href="index.php"> Location</a></li>
+                        <li class="nav-item"><a class="nav-link"href="events.php">Events</a></li>
+
 
                         <?php
                         if(isset($_SESSION['auth']))
