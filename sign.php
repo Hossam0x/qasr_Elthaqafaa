@@ -1,14 +1,5 @@
-<?php
-session_start();
-
-// Redirect to login page if user is not authenticated
-if (!isset($_SESSION['auth'])) {
-    header("Location: login.php");
-    exit; 
-}
-?>
-
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +14,7 @@ if (!isset($_SESSION['auth'])) {
             margin-bottom: 20px;
             border: 1px solid transparent;
             font-size: 18px;
-            border-radius: 20px; /* Adjust the border-radius value to make it more or less rounded */
+            border-radius: 20px; 
         }
 
         .alert-success {
@@ -31,16 +22,16 @@ if (!isset($_SESSION['auth'])) {
             background-color: #dff0d8;
             border-color: #d6e9c6;
         }
+
     </style>
 </head>
 <body>
     <div class="container p-5 bg-white mt-5 position-relative rounded-5 shadow-lg">
         <div class="arrows-icon d-flex align-items-center justify-content-between mb-5">
             <a href="events.php" class="text-black"><i class="fa-solid fa-arrow-left"></i></a>
-        <a href="Reservations.php" class="text-black"><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="Reservations.php" class="text-black"><i class="fa-solid fa-arrow-right"></i></a>
         </div>
    
-        <!-- Display success message if it exists -->
         <?php
         if (isset($_SESSION["create"])) {
         ?>
@@ -54,7 +45,7 @@ if (!isset($_SESSION['auth'])) {
         }
         ?>
         <div class="form_side">
-            <form action="handelers/handelsign.php<?php if(isset($_GET['id'])) { echo '?id=' . $_GET['id']; } ?>" method="post">
+            <form id="paymentForm" action="handelers/handelsign.php<?php if(isset($_GET['id'])) { echo '?id=' . $_GET['id']; } ?>" method="post">
                 <div class="row d-flex align-items-center justify-content-between">
                     <div class="col-md-6 ">
                         <!-- First Name Input -->
@@ -77,6 +68,19 @@ if (!isset($_SESSION['auth'])) {
                             <label for="phone">Phone</label>
                             <input type="tel" name="phone" class="w-100 p-2  rounded-5" id="phone" required placeholder="PhoneNumber">
                         </div>
+            <div class="col-md-6 mb-3 d-flex align-items-center gap-5 me-2">
+                <label for="ticketCounter">Number of Tickets</label>
+                     <div class="input-group">
+                         <button type="button" class="btn btn-outline-secondary" onclick="decrement()" style="margin-right: 5px;">
+                              <i class="fa-solid fa-minus"></i>
+                          </button>
+                         <input type="number" name="num_tickets" id="ticketCounter" class="form-control ticket-input" value="1" min="1">
+                         <button type="button" class="btn btn-outline-secondary" onclick="increment()" style="margin-left: 5px;">
+                              <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+            </div>
+
                     </div>
                     <div class="col-md-6 d-flex align-items-center">
                         <!-- Visa Image -->
@@ -84,9 +88,7 @@ if (!isset($_SESSION['auth'])) {
                         <div class="col-md-6 ">
                             <?php 
                             include 'database.php';
-                            // Check if 'id' is set in the URL
                             $id = isset($_GET['id']) ? $_GET['id'] : null;
-                            // Fetch price if id is valid
                             if ($id !== null) {
                                 $sqll="SELECT * from storedata where id='$id'";
                                 $result = mysqli_query($con, $sqll);
@@ -101,7 +103,6 @@ if (!isset($_SESSION['auth'])) {
                             ?>
                             
                             <p class="lead">TotalPrice: <span class="text-success"><?php echo isset($price) ? $price : ''; ?></span></p>
-                            <!-- Card Number Input -->
                             <label for="visa-num">
                                 <p class="lead">CardNum: </p>
                             </label>
@@ -117,5 +118,19 @@ if (!isset($_SESSION['auth'])) {
             </form>
         </div>
     </div>
+
+    <script>
+        function increment() {
+            var input = document.getElementById('ticketCounter');
+            input.value = parseInt(input.value) + 1;
+        }
+
+        function decrement() {
+            var input = document.getElementById('ticketCounter');
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+            }
+        }
+    </script>
 </body>
 </html>

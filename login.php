@@ -1,14 +1,6 @@
 <?php
-// Start the session
 session_start();
 
-// Check if there are any previous login errors stored in the session
-if(isset($_SESSION['login_error'])) {
-    // Clear the login error session variable
-    unset($_SESSION['login_error']);
-}
-
-// Remaining HTML code for the login page
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,14 +9,14 @@ if(isset($_SESSION['login_error'])) {
     <link rel="stylesheet" href="css/ss.css">
     <link rel="stylesheet" href="css/log.css">
     <style>
-        /* Custom styles for alert box */
+       
         .alert.alert-danger {
-            background-color: #f8d7da; /* Red background color */
-            border: 1px solid #f5c6cb; /* Border color */
-            border-radius: 20px; /* Rounded corners */
-            padding: 10px; /* Add padding to the content */
-            margin-bottom: 6px; /* Add margin to separate from other elements */
-            text-align: center; /* Center-align the text */
+            background-color: #f8d7da; 
+            border: 1px solid #f5c6cb; 
+            border-radius: 20px; 
+            padding: 10px; 
+            margin-bottom: 6px; 
+            text-align: center; 
             font-size: 18px;
             max-width: 300px;
             margin: 0 auto;

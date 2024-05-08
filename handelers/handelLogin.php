@@ -4,7 +4,7 @@ require_once "../database.php";
 include '../core/function.php';
 include '../core/validation.php';
 $errors=[];
-if(isset($_POST["login"])){
+if(checkpostinput('login')){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -22,15 +22,13 @@ if(isset($_POST["login"])){
         // Verify password
         if(password_verify($password, $user['password'])) {
             $_SESSION['auth']=[$user['username'],$email];
-            header("Location: ../index.php");
+            redirect("../index.php");
             die();
         } else {
             $errors[]='Password does not match';
-            // echo "<div class='alert alert-danger'>Password does not match</div>";
         }
     } else {
         $errors[]='Email does not exist';
-        // echo "<div class='alert alert-danger'>Email does not exist</div>";
     }
     $_SESSION['errors']=$errors;
     if(!empty($_SESSION['errors'])){

@@ -1,6 +1,7 @@
 <?php session_start();
+include 'core/function.php';
 if(!isset($_SESSION['auth'])){
-  header('Location: ../updates/login.php');
+ redirect("../updates/login.php");
   exit();
 }
 if(isset($_SESSION['auth'])){
@@ -118,14 +119,15 @@ if(isset($_SESSION['auth'])){
                             <a href="sign.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Book Now  <i class="fa-solid fa-arrow-right text-white"></i></a>
                         </button>
                     <?php else: ?>
-                        <p class="text-danger">Tickets are sold out</p> <!-- أو رسالة أخرى تناسب الحالة -->
+                        <p class="text-danger">Tickets are sold out</p> 
                     <?php endif; ?>
                     <?php endif;?>
                   </div>
                 </div>
+                
               </div>
             </div>            
-          <?php } ?> <!-- Close the while loop here -->
+          <?php } ?> 
           </div>
         </div>
       </section>
@@ -168,7 +170,7 @@ if(isset($_SESSION['auth'])){
                             <a href="sign.php?id=<?php echo $data['id']; ?>" class="text-white text-decoration-none">Book Now <i class="fa-solid fa-arrow-right text-white"></i></a>
                         </button>
                     <?php else: ?>
-                        <p class="text-danger">Tickets are sold out</p> <!-- أو رسالة أخرى تناسب الحالة -->
+                        <p class="text-danger">Tickets are sold out</p> 
                     <?php endif; ?>
                 <?php endif; ?>
                   </div>

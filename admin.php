@@ -1,6 +1,7 @@
 <?php session_start();
+include 'core/function.php';
 if(!isset($_SESSION['auth'])){
-    header('Location: ../updates/login.php');
+    redirect("../updates/login.php");
     exit();
   }
   else{
@@ -14,7 +15,7 @@ if(!isset($_SESSION['auth'])){
     mysqli_stmt_fetch($stmt);
     mysqli_stmt_close($stmt);
     if($isadmin!=1){
-        header('Location: ../updates/index.php');
+        redirect("../updates/index.php");
         exit();
     }
 

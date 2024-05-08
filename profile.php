@@ -1,10 +1,8 @@
 <?php
 session_start();
-
-// Check if the user is authenticated
+include 'core/function.php';
 if (!isset($_SESSION['auth'])) {
-    // Redirect to login page if not authenticated
-    header("Location: login.php");
+    redirect("login.php");
     exit;
 }
 include "database.php";
@@ -116,7 +114,7 @@ include "handelers/handelProfile.php";
                                         <input placeholder="@Username" type="text" class="w-100 p-2 rounded-5 mt-4" name="username" value="<?php echo $user['username']; ?>">
                                     </div>
                                     <div class="col-md-12 mb-3">
-                                        <input placeholder="Your phone number" type="tel" maxlength="11" class="w-100 p-2 rounded-5 mt-4">
+                                        <input placeholder="Your phone number" name="phone"  value="<?php echo $user['phonenumber']?>" type="tel" maxlength="11" class="w-100 p-2 rounded-5 mt-4" >
                                     </div>
                                     <div class="col-md-12 link">
                                         <a href="#">Delete Your account</a>

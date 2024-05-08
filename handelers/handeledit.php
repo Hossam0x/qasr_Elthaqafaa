@@ -1,11 +1,12 @@
 <?php 
 session_start();
 include '../database.php';
+include '../core/function.php';
 if(!isset($_SESSION['auth'])){
     header('Location: ../login.php');
     exit();
 }
-if (isset($_POST["edit"])) {
+if (checkpostinput('edit')) {
     $name = mysqli_real_escape_string($con, $_POST["name"]);
     $date = mysqli_real_escape_string($con, $_POST["WorkShopDay"]);
     $price = mysqli_real_escape_string($con, $_POST["TicketPrice"]);
@@ -13,9 +14,7 @@ if (isset($_POST["edit"])) {
 
     $id = mysqli_real_escape_string($con, $_POST["id"]);
 
-    // Check if a new image is being uploaded
     if ($_FILES['imagetmp']['error'] === UPLOAD_ERR_OK) {
-        // Handle image upload
         $targetDirectory = "../uploads/";
         $targetFileName = $targetDirectory . basename($_FILES['imagetmp']['name']);
         if (!move_uploaded_file($_FILES['imagetmp']['tmp_name'], $targetFileName)) {
@@ -35,13 +34,12 @@ if (isset($_POST["edit"])) {
 
     if (mysqli_multi_query($con, $sqlUpdate)) {
         do {
-            // handle each query result as needed
         } while (mysqli_next_result($con));
     } else {
         die('Database update failed: ' . mysqli_error($con));
     }
     $_SESSION['update'] = "updated successfully.";
-    header("Location: ../edit.php?id=$id");
+    redirect("../edit.php?id=$id");
     exit();
 }
 ?>

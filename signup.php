@@ -5,15 +5,14 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/ss.css">
     <style>
-        /* Custom styles for alert box */
         .alert.alert-danger {
-            background-color: #f8d7da; /* Red background color */
-            border: 1px solid #f5c6cb; /* Border color */
-            border-radius: 20px; /* Rounded corners */
-            padding: 10px; /* Add padding to the content */
-            margin-bottom: 20px; /* Add margin to separate from other elements */
-            text-align: center; /* Center-align the text */
-            font-size: 16px; /* Font size */
+            background-color: #f8d7da; 
+            border: 1px solid #f5c6cb; 
+            border-radius: 20px; 
+            padding: 10px; 
+            margin-bottom: 20px; 
+            text-align: center;
+            font-size: 16px; 
         }
     </style>
 </head>

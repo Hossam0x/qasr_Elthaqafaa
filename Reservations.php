@@ -1,13 +1,11 @@
 <?php
 session_start();
+include 'core/function.php';
 
-// Check if the user is authenticated
 if (!isset($_SESSION['auth'])) {
-    // Redirect to login page if not authenticated
-    header("Location: login.php");
+   redirect("login.php");
     exit;
 }
-// Get name and email from session
 include 'database.php';
 $name = $_SESSION['auth'][0];
 $email = $_SESSION['auth'][1];
@@ -82,6 +80,7 @@ mysqli_stmt_close($stmt);
     <th>Type</th>
     <th>Name</th>
     <th>Date</th>
+    <th>Price</th>
     <th>Action</th>
     
     </tr>
@@ -100,6 +99,7 @@ mysqli_stmt_close($stmt);
             <td><?php echo $row['type'] ?></td>
             <td><?php echo $row['name']?></td>
             <td><?php echo $row['date'] ?></td>
+            <td><?php echo $row['price']?></td>
             <td><a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
           </tr>
           <?php

@@ -5,13 +5,11 @@
     include '../core/validation.php';
     include '../database.php';
     if(CheckRequestMethod("POST") &&checkpostinput('username')){
-        //var_dump($_POST);
         foreach($_POST as $key => $value){
              $$key=sanitizeinput($value);
         }
     }
-    //validate 
-    //username -> required , min:3 , max:25
+
     if(!requiredval($username)){
         $errors[]= "name is reqired";
     }elseif(!min_val($username,3)){
@@ -20,16 +18,11 @@
         $errors[]= "name must be less than 25 chars";
     }
 
-
-    //validate
-    //email -> required , valid
     if(!requiredval($email)){
         $errors[]= "email is reqired";
     }elseif(!email_val($email)){
         $errors[]="please type a valid email";
     }
-    //validate 
-    //username -> required , min:3 , max:25
 
     if(!requiredval($password)){
         $errors[]= "password is reqired";
@@ -62,7 +55,6 @@ if (empty($errors)) {
         mysqli_stmt_bind_param($stmt, "ssss",$name, $username, $email, password_hash($password,PASSWORD_DEFAULT));
         mysqli_stmt_execute($stmt);
         $data=[$username,$email,sha1($password)];
-        // echo "<div class='alert alert-success'>You are registered successfully</div>";
         $_SESSION['auth']=[$username,$email];
         redirect("../index.php");
         die();
