@@ -3,7 +3,6 @@ session_start();
 include '../database.php';
 include '../core/function.php';
 if (CheckRequestMethod("POST")) {
-    // Retrieve form data
     $email = $_POST['email'];
     $firstname = $_POST['fname'];
     $lastname = $_POST['lname'];

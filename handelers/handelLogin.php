@@ -5,7 +5,7 @@ include '../core/function.php';
 include '../core/validation.php';
 $errors=[];
 if(checkpostinput('login')){
-    $email = $_POST['email'];
+    $email =sanitizeinput( $_POST['email']);
     $password = $_POST['password'];
 
     // Prepare and execute SQL query
