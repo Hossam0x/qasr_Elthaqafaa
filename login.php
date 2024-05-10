@@ -62,7 +62,7 @@ session_start();
             </div>
     </div>
     <div class="col-md-6">
-      <img src="images/Welcome-bro.png" class="img-fluid w-75">
+      <img src="images/Welcome-bro.png" class="img-fluid w-75 floating-img">
     </div>
           </div>
           </div>

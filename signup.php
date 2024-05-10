@@ -31,7 +31,7 @@
                 unset($_SESSION['errors']);
             endif; 
         ?>
-            <div class="row d-flex align-items-center">
+            <div class="row d-flex align-items-center ">
                 <div class="col-md-6 ">
                     <div class="form_side">
                         <h5 class="position-relative pb-2 mb-4 text-center" style="font-size:32px; font-weight:700;">SignUp</h5>
@@ -64,7 +64,10 @@
               </div>
             </div>
             <div class="col-md-6">
-      <img src="images/Welcome-sign.png" class="img-fluid w-75">
+      <img src="images/Welcome-sign.png" class="img-fluid w-75 floating-img">
+    </div>
+    <div class="link">
+      <a href="login.php" class="s-color">already have an account? <span class="text-color">login</span></a>
     </div>
           </div>
         </div>

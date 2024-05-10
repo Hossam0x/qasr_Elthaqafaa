@@ -268,5 +268,10 @@ We have workshops to teach sculpture </p>
     </div>
   </footer>
 <script src="js/bootstrap.bundle.min.js"></script>
+<div class="icon-bottom " dir="rtl">
+<a href=# class="fixed-bottom ">
+  <i class="fa-solid fa-arrow-up text-white rounded-circle p-2 bg-color mb-3 me-3"></i>
+</a>
+</div>
 </body>
 </html>
