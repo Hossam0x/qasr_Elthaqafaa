@@ -2,7 +2,9 @@
   font-family: "Amatic";
   src: url(../fonts/AmaticSC-Regular.ttf);
 }
-
+h3{
+  font-family: "Amatic";
+}
 .bg-color{
   background-color: rgb(155, 132, 101);
 }
@@ -76,3 +78,30 @@ span{
   .btng:active {
     transform: translateY(-1px);
   }
+  .porfolio-layer {
+    position: absolute;
+    inset: 5px;
+    opacity: 0;
+    transition-duration: 0.5s;
+    background-color: #fdfbfb;
+}
+
+.porfolio-img:hover .porfolio-layer {
+    opacity: 1;
+}
+
+.porfolio-layer a {
+    background-color: rgba(164, 150, 108, 0.4);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.porfolio-layer a:hover {
+    background-color: white;
+    border: rgba(164, 150, 108, 0.4) 1px solid;
+}
+
+.porfolio-layer a:hover i {
+    color: rgba(164, 150, 108, 0.4);
+}
