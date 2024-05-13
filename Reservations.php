@@ -101,7 +101,11 @@ mysqli_stmt_close($stmt);
             <td><?php echo $row['date'] ?></td>
             <td><?php echo $row['price']?></td>
             <td><?php echo $row['ticketnum']?></td>
+<<<<<<< HEAD
             <td><a href="delete.php?id=<?php echo $row['id']; ?>" class="btn text-danger"><i class="fa-solid fa-trash fa-2x"></i></a></td>
+=======
+            <td><a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
+>>>>>>> 789181e1ba5ee11002c5ba9acd3f434ab31eec8d
           </tr>
           <?php
                 }
