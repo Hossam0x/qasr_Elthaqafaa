@@ -81,8 +81,8 @@ mysqli_stmt_close($stmt);
     <th>Name</th>
     <th>Date</th>
     <th>Price</th>
+    <th>Num of tickets</th>
     <th>Action</th>
-    
     </tr>
   </thead>
   <tbody>
@@ -100,7 +100,8 @@ mysqli_stmt_close($stmt);
             <td><?php echo $row['name']?></td>
             <td><?php echo $row['date'] ?></td>
             <td><?php echo $row['price']?></td>
-            <td><a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
+            <td><?php echo $row['ticketnum']?></td>
+            <td><a href="delete.php?id=<?php echo $row['id']; ?>" class="btn text-danger"><i class="fa-solid fa-trash fa-2x"></i></a></td>
           </tr>
           <?php
                 }

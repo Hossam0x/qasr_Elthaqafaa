@@ -118,7 +118,6 @@
             </form>
         </div>
     </div>
-
     <script>
         function increment() {
             var input = document.getElementById('ticketCounter');

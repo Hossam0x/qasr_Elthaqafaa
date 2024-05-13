@@ -8,148 +8,288 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- <link rel="stylesheet" href="css/signup.css"> -->
   <link rel="stylesheet" href="css/testing.css">
+  <link rel="stylesheet" href="css/lightbox.css">
 </head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="bg-white p-2">
-          <ul class="nav nav-tabs justify-content-center">
-            <li class="nav-item"><a class="nav-link active" href="#All" data-bs-toggle="tab">All Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#WorkShops" data-bs-toggle="tab">Work Shops</a></li>
-            <li class="nav-item"><a class="nav-link" href="#Bazar" data-bs-toggle="tab">Bazar</a></li>
-            <li class="nav-item"><a class="nav-link" href="#Concerts" data-bs-toggle="tab">Concerts</a></li>
-            <li class="nav-item"><a class="nav-link" href="#plays" data-bs-toggle="tab">Plays</a></li>
-          </ul>
-          <div class="tab-content">
-            <div id="All" class="active tab-pane fade in show">
-              <div class="row">
-                <div class="col-md-4 my-3">
-                  <div class="card w-75">
-                    <img src="images/image3.jpg" class="card-img-top rounded-2" alt="book-reading">
-                    <div class="card-body">
-                      <h5 class="card-title">WorkShop</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 my-3">
-                  <div class="card w-75">
-                    <img src="images/image1.jpg" class="card-img-top rounded-2" alt="book-reading">
-                    <div class="card-body">
-                      <h5 class="card-title">WorkShop</h5>
-
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 my-3">
-                  <div class="card w-100">
-                    <img src="images/image2.jpg" class="card-img-top rounded-2" alt="book-reading">
-                    <div class="card-body">
-                      <h5 class="card-title">WorkShop</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 my-3">
-                  <div class="card w-75">
-                    <img src="images/book1_.jpeg" class="card-img-top rounded-2" alt="book-reading">
-                    <div class="card-body">
-                      <h5 class="card-title">Bazar</h5>
-
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 ">
-                  <div class="card w-75">
-                    <img src="images/play1.jpg" class="card-img-top rounded-2" alt="book-reading">
-                    <div class="card-body">
-                      <h5 class="card-title">Plays</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 ">
-                  <div class="card w-75">
-                    <img src="images/party1_.jpg" class="card-img-top rounded-2" alt="book-reading">
-                    <div class="card-body">
-                      <h5 class="card-title">Concert</h5>
-                    </div>
-                  </div>
+  <section class="portfolio" id="works">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h3 class=" position-relative z-1 fs-1">OUR Services.</h3>
+      </div>
+    </div>
+    <ul class="nav nav-underline mb-3 justify-content-center" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active text-black fw-bold" id="pills-home-tab" data-bs-toggle="pill"
+          data-bs-target="#all" type="button" role="tab" aria-controls="pills-home" aria-selected="true">All</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link text-black fw-bold" id="pills-profile-tab" data-bs-toggle="pill"
+          data-bs-target="#brand" type="button" role="tab" aria-controls="pills-profile"
+          aria-selected="false">Work Shops</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link text-black fw-bold" id="pills-contact-tab" data-bs-toggle="pill"
+          data-bs-target="#design" type="button" role="tab" aria-controls="pills-contact"
+          aria-selected="false">Bazar</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link text-black fw-bold" id="pills-disabled-tab" data-bs-toggle="pill"
+          data-bs-target="#concert" type="button" role="tab" aria-controls="pills-disabled"
+          aria-selected="false">Concerts</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link text-black fw-bold" id="pills-disabled-tab" data-bs-toggle="pill"
+          data-bs-target="#plays" type="button" role="tab" aria-controls="pills-disabled"
+          aria-selected="false">Plays</button>
+      </li>
+    </ul>
+    <div class="container">
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="porfolio-img position-relative">
+                <img src="uploads/image1.jpg" class="w-100">
+                <div
+                  class="porfolio-layer d-flex justify-content-center align-items-center text-center bg-colo flex-column gap-2">
+                  <h6 class="fw-bold text-uppercase">Workshops</h6>
+                  <ul class="list-unstyled d-flex gap-3 ">
+                    <a href="#"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-link-slash"></i></a>
+                    <a href="uploads/image1.jpg"
+                    data-lightbox="models"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-magnifying-glass-plus"></i>
+                      </a>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div id="WorkShops" class=" tab-pane fade ">
-              <div class="row">
-                <div class="col-md-4 my-3">
-                  <div class="card w-75">
-                    <img src="images/image3.jpg" class="card-img-top rounded-2" alt="book-reading">
-                    <div class="card-body">
-                      <h5 class="card-title">WorkShop</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 my-3">
-                  <div class="card w-75">
-                    <img src="images/image1.jpg" class="card-img-top rounded-2" alt="book-reading">
-                    <div class="card-body">
-                      <h5 class="card-title">WorkShop</h5>
-
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 my-3">
-                  <div class="card w-100">
-                    <img src="images/image2.jpg" class="card-img-top rounded-2" alt="book-reading">
-                    <div class="card-body">
-                      <h5 class="card-title">WorkShop</h5>
-                    </div>
-                  </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="porfolio-img position-relative">
+                <img src="uploads/image2.jpg" class="w-100">
+                <div
+                  class="porfolio-layer d-flex justify-content-center align-items-center text-center bg-colo flex-column gap-2">
+                  <h6 class="fw-bold text-uppercase">Work shops</h6>
+                  <ul class="list-unstyled d-flex gap-3 ">
+                    <a href="#"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-link-slash"></i></a>
+                    <a href="uploads/image2.jpg"
+                    data-lightbox="models"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div id="Bazar" class=" tab-pane fade ">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="card w-75">
-                    <img src="images/book1_.jpeg" class="card-img-top rounded-2" alt="book-reading">
-                    <div class="card-body">
-                      <h5 class="card-title">Bazar</h5>
-                    </div>
-                  </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="porfolio-img position-relative">
+                <img src="uploads/image3.jpg" class="w-100">
+                <div
+                  class="porfolio-layer d-flex justify-content-center align-items-center text-center bg-colo flex-column gap-2">
+                  <h6 class="fw-bold text-uppercase">Work Shops</h6>
+                  <ul class="list-unstyled d-flex gap-3 ">
+                    <a href="#"
+                    class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                    class="fa-solid fa-link-slash"></i></a>
+                    <a href="uploads/image3.jpg"
+                    data-lightbox="models"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div id="Concerts" class=" tab-pane fade">
-              <div class="row">
-                <div class="col-md-4 my-3">
-                  <div class="card w-75">
-                    <img src="images/party1_.jpg" class="card-img-top rounded-2" alt="book-reading">
-                    <div class="card-body">
-                      <h5 class="card-title">Concert</h5>
-                    </div>
-                  </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="porfolio-img position-relative">
+                <img src="uploads/book_1.jpg" class="w-100">
+                <div
+                  class="porfolio-layer d-flex justify-content-center align-items-center text-center bg-colo flex-column gap-2">
+                  <h6 class="fw-bold text-uppercase">Bazar</h6>
+                  <ul class="list-unstyled d-flex gap-3 ">
+                    <a href="#"
+                    class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                    class="fa-solid fa-link-slash"></i></a>
+                    <a href="uploads/book_1.jpg"
+                    data-lightbox="models"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div id="plays" class=" tab-pane fade ">
-              <div class="row">
-                <div class="col-md-4 my-3">
-                  <div class="card w-75">
-                    <img src="images/play1.jpg" class="card-img-top rounded-2" alt="book-reading">
-                    <div class="card-body">
-                      <h5 class="card-title">Plays</h5>
-                    </div>
-                  </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="porfolio-img position-relative">
+                <img src="uploads/play3.jpg" class="w-100">
+                <div
+                  class="porfolio-layer d-flex justify-content-center align-items-center text-center bg-colo flex-column gap-2">
+                  <h6 class="fw-bold text-uppercase">play</h6>
+                  <ul class="list-unstyled d-flex gap-3 ">
+                    <a href="#"
+                    class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                    class="fa-solid fa-link-slash"></i></a>
+                    <a href="uploads/play2.jpg"
+                    data-lightbox="models"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="porfolio-img position-relative">
+                <img src="uploads/party2.jpg" class="w-100">
+                <div
+                  class="porfolio-layer d-flex justify-content-center align-items-center text-center bg-colo flex-column gap-2">
+                  <h6 class="fw-bold text-uppercase">Concert</h6>
+                  <ul class="list-unstyled d-flex gap-3 ">
+                    <a href="#"
+                    class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                    class="fa-solid fa-link-slash"></i></a>
+                    <a href="uploads/party2.jpg"
+                    data-lightbox="models"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-
+        <div class="tab-pane fade" id="brand" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="porfolio-img position-relative">
+                <img src="uploads/image1.jpg" class="w-100">
+                <div
+                  class="porfolio-layer d-flex justify-content-center align-items-center text-center bg-colo flex-column gap-2">
+                  <h6 class="fw-bold text-uppercase">Workshops</h6>
+                  <ul class="list-unstyled d-flex gap-3 ">
+                    <a href="#"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-link-slash"></i></a>
+                    <a href="uploads/image1.jpg"
+                    data-lightbox="models"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-magnifying-glass-plus"></i>
+                      </a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="porfolio-img position-relative">
+                <img src="uploads/image2.jpg" class="w-100">
+                <div
+                  class="porfolio-layer d-flex justify-content-center align-items-center text-center bg-colo flex-column gap-2">
+                  <h6 class="fw-bold text-uppercase">Work shops</h6>
+                  <ul class="list-unstyled d-flex gap-3 ">
+                    <a href="#"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-link-slash"></i></a>
+                    <a href="uploads/image2.jpg"
+                    data-lightbox="models"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="porfolio-img position-relative">
+                <img src="uploads/image3.jpg" class="w-100">
+                <div
+                  class="porfolio-layer d-flex justify-content-center align-items-center text-center bg-colo flex-column gap-2">
+                  <h6 class="fw-bold text-uppercase">Work Shops</h6>
+                  <ul class="list-unstyled d-flex gap-3 ">
+                    <a href="#"
+                    class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                    class="fa-solid fa-link-slash"></i></a>
+                    <a href="uploads/image3.jpg"
+                    data-lightbox="models"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="design" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="porfolio-img position-relative">
+                <img src="uploads/book_1.jpg" class="w-100">
+                <div
+                  class="porfolio-layer d-flex justify-content-center align-items-center text-center bg-colo flex-column gap-2">
+                  <h6 class="fw-bold text-uppercase">Bazar</h6>
+                  <ul class="list-unstyled d-flex gap-3 ">
+                    <a href="#"
+                    class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                    class="fa-solid fa-link-slash"></i></a>
+                    <a href="uploads/book_1.jpg"
+                    data-lightbox="models"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="concert" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="porfolio-img position-relative">
+                <img src="uploads/party2.jpg" class="w-100">
+                <div
+                  class="porfolio-layer d-flex justify-content-center align-items-center text-center bg-colo flex-column gap-2">
+                  <h6 class="fw-bold text-uppercase">Concert</h6>
+                  <ul class="list-unstyled d-flex gap-3 ">
+                    <a href="#"
+                    class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                    class="fa-solid fa-link-slash"></i></a>
+                    <a href="uploads/party2.jpg"
+                    data-lightbox="models"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="plays" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="porfolio-img position-relative">
+                <img src="uploads/play3.jpg" class="w-100">
+                <div
+                  class="porfolio-layer d-flex justify-content-center align-items-center text-center bg-colo flex-column gap-2">
+                  <h6 class="fw-bold text-uppercase">play</h6>
+                  <ul class="list-unstyled d-flex gap-3 ">
+                    <a href="#"
+                    class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                    class="fa-solid fa-link-slash"></i></a>
+                    <a href="uploads/play2.jpg"
+                    data-lightbox="models"
+                      class="text-white text-decoration-none d-flex text-center justify-content-center align-items-center"><i
+                        class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
       </div>
     </div>
-
-  </div>
+  </section>
+  <script src="js/lightbox-plus-jquery.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
