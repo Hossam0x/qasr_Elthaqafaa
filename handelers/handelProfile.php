@@ -1,4 +1,5 @@
 <?php
+
 $email = $_SESSION['auth'][1];
 $sql = "SELECT * FROM user WHERE email = ?";
 $stmt = mysqli_stmt_init($con);
@@ -11,6 +12,7 @@ if (mysqli_stmt_prepare($stmt, $sql)) {
 
 
 if (isset($_POST['save'])) {
+    
     $name = $_POST['name'];
     $new_email = $_POST['email'];
     $username = $_POST['username'];

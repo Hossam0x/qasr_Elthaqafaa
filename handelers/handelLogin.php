@@ -8,7 +8,6 @@ if(checkpostinput('login')){
     $email =sanitizeinput( $_POST['email']);
     $password = $_POST['password'];
 
-    // Prepare and execute SQL query
     $sql = "SELECT * FROM user WHERE email=?";
     $stmt = mysqli_prepare($con, $sql);
     mysqli_stmt_bind_param($stmt, "s", $email);

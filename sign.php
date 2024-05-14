@@ -43,6 +43,13 @@
         <?php
         unset($_SESSION["create"]);
         }
+        else{
+            if(isset($_SESSION['errors'])){
+                echo '<div class="alert alert-danger text-center">' . $_SESSION['errors'] . '</div>';
+            }
+            unset($_SESSION['errors']);
+            
+        }
         ?>
         <div class="form_side">
             <form id="paymentForm" action="handelers/handelsign.php<?php if(isset($_GET['id'])) { echo '?id=' . $_GET['id']; } ?>" method="post">
@@ -102,7 +109,7 @@
                             }
                             ?>
                             
-                            <p class="lead">TotalPrice: <span class="text-success"><?php echo isset($price) ? $price : ''; ?></span></p>
+                            <p class="lead">TotalPrice: <span class="text-success"><?php echo isset($price) ? $price : ''; ?></span>L.E</p>
                             <label for="visa-num">
                                 <p class="lead">CardNum: </p>
                             </label>
@@ -119,17 +126,21 @@
         </div>
     </div>
     <script>
-        function increment() {
-            var input = document.getElementById('ticketCounter');
-            input.value = parseInt(input.value) + 1;
-        }
+    var ticketPrice = <?php echo isset($price) ? $price : 0; ?>;
 
-        function decrement() {
-            var input = document.getElementById('ticketCounter');
-            if (parseInt(input.value) > 1) {
-                input.value = parseInt(input.value) - 1;
-            }
+    function increment() {
+        var input = document.getElementById('ticketCounter');
+        input.value = parseInt(input.value) + 1;
+        document.querySelector('.text-success').innerText = parseInt(input.value) * ticketPrice;
+    }
+
+    function decrement() {
+        var input = document.getElementById('ticketCounter');
+        if (parseInt(input.value) > 1) {
+            input.value = parseInt(input.value) - 1;
+            document.querySelector('.text-success').innerText = parseInt(input.value) * ticketPrice;
         }
-    </script>
+    }
+</script>
 </body>
 </html>

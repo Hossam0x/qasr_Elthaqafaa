@@ -8,13 +8,15 @@ if (CheckRequestMethod("POST")) {
     $lastname = $_POST['lname'];
     $phone = $_POST['phone'];
     $card = $_POST['cardnum']; 
-    $type = 'test';
-    $date = 'test';
-    $price = 'test';
+    // $type = 'test';
+    // $date = 'test';
+    // $price = 'test';
     $id = $_GET['id'];
     $numticket=$_POST['num_tickets'];
 
-    $sqll = "SELECT * FROM storedata WHERE id='$id'";
+    $sqll = "SELECT s.*, t.ticketno FROM storedata s
+    JOIN ticketinfo t ON s.id = t.id
+    WHERE s.id='$id'";
     $result = mysqli_query($con, $sqll);
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
@@ -22,8 +24,10 @@ if (CheckRequestMethod("POST")) {
         $date = $row['date'];
         $price = $row['price'];
         $name = $row['name'];
-    }
+        $avticket=$row['ticketno'];
+}
 
+    if ($numticket<=$avticket){
     $sql = "INSERT INTO reservations (user_email, type, name, date, phone, first_name, last_name, price, ticketnum, cardnumber) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $con->prepare($sql);
     $stmt->bind_param("ssssssssss", $email, $type, $name, $date, $phone, $firstname, $lastname, $price, $numticket, $card);
@@ -54,7 +58,15 @@ if (CheckRequestMethod("POST")) {
         echo "Error: " . $sql . "<br>" . $con->error;
     }
 
+
     $stmt->close();
+}
+else{
+    $_SESSION['errors']="No Available Ticket";
+redirect("../sign.php?id=$id");
+exit;
+}
+
 }
 
 $con->close();
